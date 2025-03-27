@@ -1,0 +1,122 @@
+.dashboard-container2 {
+  background-color: #f8f9fa;
+  color: #212529;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+li div {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.add-btn2 {
+  background: #28a745;
+}
+
+.add-btn2:hover {
+  background: #218838;
+}
+
+.edit-btn2 {
+  background: #ffc107;
+  color: #212529;
+}
+
+.edit-btn2:hover {
+  background: #e0a800;
+}
+
+.delete-btn2 {
+  background: #dc3545;
+}
+
+.delete-btn2:hover {
+  background: #c82333;
+}
+
+img {
+  border-radius: 5px;
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  li div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.dashboard_list{
+  background-color: whitesmoke;
+  margin: 3px;
+  border-radius: 7px;
+}

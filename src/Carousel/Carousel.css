@@ -1,0 +1,108 @@
+.slider-container-a {
+  width: 85%;
+  /* Keeps the carousel well-centered */
+  margin: auto;
+  padding: 20px;
+
+
+}
+
+.tittle-a {
+  color: #005aa7;
+  text-align: center;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1000;
+  color: transparent;
+}
+
+.card-a {
+  background-color: #2db9fff9;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  height: 400px;
+  /* Increased height for better layout */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-a:hover {
+  transform: scale(1.05);
+}
+
+.card-image-a {
+  width: 100%;
+  height: 200px;
+  /* Set a fixed height for all images */
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid #005aa7;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-image-a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image fills the space properly */
+}
+
+.card-content-a {
+  width: 100%;
+  background: #0298e2f9;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card-content-a h3 {
+  color: #036691;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.card-content-a p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.view-more-a {
+  background-color: #fca311;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-more-a:hover {
+  background-color: #ffba08;
+}
+
+/* Adjust margin between slides */
+.slick-slide {
+  padding: 10px;
+
+}
+
+arrows {
+  color: #005aa7;
+}
+
+/* Ensure full visibility of cards */
+.slick-list {
+  color: #005aa7;
+  padding: 0 !important;
+}

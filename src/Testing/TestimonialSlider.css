@@ -1,0 +1,43 @@
+/* Prevent Horizontal Scrolling */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+.testimonial-container h2{
+  color: #005aa7;
+}
+/* Ensure Container Stays Within Viewport */
+.testimonial-section {
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+  text-align: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* Image Styling */
+.testimonial-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Star Rating */
+.stars {
+  font-size: 1.2rem;
+  color: #fbc531;
+}

@@ -1,0 +1,55 @@
+.post-destination-container{
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+     /* background: url('https://img.freepik.com/premium-photo/traveling-blue-background-with-accessories-journey-hat-camera-binoculars-airplane_373887-466.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment:scroll; */
+}
+
+/* Background Image */
+/* body {
+    background: url('https://img.freepik.com/premium-photo/traveling-blue-background-with-accessories-journey-hat-camera-binoculars-airplane_373887-466.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment:scroll;
+} */
+
+.post-destination-container h2 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.post-destination-container form input,
+.post-destination-container form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-destination-container form button {
+    width: 100%;
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.post-destination-container form button:hover {
+    background: darkgreen;
+}
+
+.preview-img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
