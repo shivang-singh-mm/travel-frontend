@@ -1,23 +1,15 @@
-.post-destination-container{
+.post-destination-container {
     max-width: 600px;
     margin: auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 2;
-     /* background: url('https://img.freepik.com/premium-photo/traveling-blue-background-with-accessories-journey-hat-camera-binoculars-airplane_373887-466.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-attachment:scroll; */
 }
 
-/* Background Image */
-/* body {
-    background: url('https://img.freepik.com/premium-photo/traveling-blue-background-with-accessories-journey-hat-camera-binoculars-airplane_373887-466.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-attachment:scroll;
-} */
 
 .post-destination-container h2 {
     text-align: center;

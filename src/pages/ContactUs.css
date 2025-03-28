@@ -32,7 +32,9 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.contact-container, .contact-details-container, .map-section {
+.contact-container,
+.contact-details-container,
+.map-section {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;

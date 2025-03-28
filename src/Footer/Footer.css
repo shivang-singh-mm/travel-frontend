@@ -9,9 +9,9 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* background-image: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2021/06/02/20/istock-833264986.jpg);
+  background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2021/06/02/20/istock-833264986.jpg");
   background-size: cover;
-  background-attachment: fixed; */
+  background-attachment: fixed;
 
 
   padding: 20px 0;
@@ -24,20 +24,6 @@
   font-size: 24px;
 }
 
-/* .footer-section ul {
-  list-style: none;
-  padding: 0;
-} */
-
-/* .footer-section ul li {
-  margin-bottom: 10px;
-  transition: 0.3s;
-} */
-
-/* .footer-section ul li:hover {
-  color: #1c89ea;
-  transform: scale(1.05);
-} */
 
 .newsletter-input {
   display: flex;
