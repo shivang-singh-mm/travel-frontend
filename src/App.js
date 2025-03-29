@@ -30,6 +30,7 @@ function App() {
         <Route path="/blogsinside" element={<BlogInside />} />
         <Route path="/PostDestination" element={<PostDestination />} />
 
+
         {/* <Route path="/himachal" element={<HimachalTour />} /> */}
         <Route path="/city" element={<CityTour />} />
         {/* <Route path="/kashmir" element={<KashmirTour />} />
