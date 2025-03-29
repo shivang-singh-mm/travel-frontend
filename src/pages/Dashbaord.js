@@ -10,13 +10,14 @@ const Dashboard = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
+  const [enquiry, setEnquiry] = useState([]);
 
   const baseurl = process.env.REACT_APP_API_URL
 
   useEffect(() => {
     const fetchPopularDestinations = axios.get(`${baseurl}/api/gallery/`);
     const fetchTourPackages = axios.get(`${baseurl}/api/tour/`);
-    // const fetchGallery = axios.get('gallery');
+    // const fetchGallery = axios.get(`'gallery'`);
     const fetchFeedbacks = axios.get(`${baseurl}/api/review/`);
     const fetchBlogPosts = axios.get(`${baseurl}/api/blog/`);
     // const fetchTestimonials = axios.get('testimonials');
@@ -37,8 +38,24 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container2">
-      <h2>Admin Dashboard</h2>
 
+      <h2 className="tittle-tour">Admin Dashboard</h2>
+      <section>
+        <h3>View Enquiry</h3>
+        <Link to='/dashboard/popular-destination2'>
+          <button className="add-btn">Add Destination</button></Link>
+        <ul>
+          {enquiry == [] ? <></> : enquiry.map(dest => (
+            <li key={dest.id} className='dashboard_list'>
+              {dest.title} - {dest.description}
+              <div>
+                <button className="edit-btn2">Edit</button>
+                <button className="delete-btn2">Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
       <section>
         <h3>Popular Destinations</h3>
         <Link to='/dashboard/popular-destination'>
@@ -90,7 +107,7 @@ const Dashboard = () => {
             </li>
           ))}
         </ul>
-        <Link to="/feedback">View All Reviews</Link>
+
       </section>
 
       <section>
@@ -110,22 +127,7 @@ const Dashboard = () => {
         </ul>
       </section>
 
-      {/* <section>
-        <h3>Customer queries</h3>
-        <Link to='/PostDestination'>
-          <button className="add-btn2">Add Testimonial</button></Link>
-        <ul>
-          {testimonials.map(testimonial => (
-            <li key={testimonial.id} className='dashboard_list'>
-              {testimonial.user}: {testimonial.comment}
-              <div>
-                <button className="edit-btn2">Edit</button>
-                <button className="delete-btn2">Delete</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section> */}
+
     </div>
   );
 };
