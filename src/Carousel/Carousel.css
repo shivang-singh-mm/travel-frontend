@@ -1,6 +1,6 @@
 .slider-container-a {
   width: 85%;
-  /* Keeps the carousel well-centered */
+ 
   margin: auto;
   padding: 20px;
 
@@ -19,7 +19,7 @@
 }
 
 .card-a {
-  background-color: #2db9fff9;
+  background-color:rgb(186, 180, 225);
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
