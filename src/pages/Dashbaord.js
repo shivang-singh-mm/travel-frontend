@@ -38,17 +38,17 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container2">
-     <h2 className="tittle-tour">
-  Admin Dashboard
-  <div className="view-enquiry-container">
-    <Link to='/dashboard/popular-destination2'>
-      <button className="view-enquiry-btn">View Enquiry</button>
-    </Link>
-  </div>
-</h2>
-     
- 
-       
+      <h2 className="tittle-tour">
+        Admin Dashboard
+        <div className="view-enquiry-container">
+          <Link to='/dashboard/enquiry'>
+            <button className="view-enquiry-btn">View Enquiry</button>
+          </Link>
+        </div>
+      </h2>
+
+
+
       <section>
         <h3>Popular Destinations</h3>
         <Link to='/dashboard/popular-destination'>

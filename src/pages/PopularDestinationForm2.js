@@ -1,33 +1,27 @@
 import React, { useState } from 'react';
 import './PopularDestinationForm2.css';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 function PopularDestinationForm2() {
   const [selectedUser, setSelectedUser] = useState(null);
 
   // Sample data (Modify as needed)
-  const data = [
-    { 
-      fullName: 'Saumya Singh', 
-      email: 'saumya@example.com', 
-      destination: 'New Delhi, India', 
-      phone: '+1 123-456-7890', 
-      persons: 3 
-    },
-    { 
-      fullName: 'Amit Sharma', 
-      email: 'amit@example.com', 
-      destination: 'Paris, France', 
-      phone: '+33 6 12 34 56 78', 
-      persons: 2 
-    },
-    { 
-      fullName: 'Riya Patel', 
-      email: 'riya@example.com', 
-      destination: 'Tokyo, Japan', 
-      phone: '+81 90-1234-5678', 
-      persons: 4 
-    }
-  ];
+  const [data, setData] = useState([]);
+
+
+  const baseurl = process.env.REACT_APP_API_URL
+
+  async function fecthEnquiry() {
+    const fetchEnquiryRes = await axios.get(`${baseurl}/api/enquiry/`);
+    setData(fetchEnquiryRes.data)
+    console.log(fetchEnquiryRes)
+  }
+
+  useEffect(() => {
+    fecthEnquiry()
+  }, [])
+
 
   const handleView = (user) => {
     setSelectedUser(user);
@@ -44,7 +38,7 @@ function PopularDestinationForm2() {
       <h3 className='tittle-a'> Enquiries</h3>
       {data.map((item, index) => (
         <div key={index} className="list-item">
-          <p className="client-name">{index + 1}. {item.fullName}</p>
+          <p className="client-name">{index + 1}. {item.name}</p>
           <div className="client-details">
             <button className="add-btn" onClick={() => handleView(item)}>View</button>
           </div>
@@ -61,17 +55,17 @@ function PopularDestinationForm2() {
             <div className="card-container">
               {/* First Card */}
               <div className="info-card">
-                <h4>Personal Details</h4>
-                <p><strong>Name:</strong> {selectedUser.fullName}</p>
+                {/* <h4>Personal Details</h4> */}
+                <p><strong>Name:</strong> {selectedUser.name}</p>
                 <p><strong>Email:</strong> {selectedUser.email}</p>
-                <p><strong>Phone:</strong> {selectedUser.phone}</p>
+                <p><strong>Phone:</strong> {selectedUser.number}</p>
               </div>
 
               {/* Second Card */}
               <div className="info-card">
-                <h4>Travel Details</h4>
+                {/* <h4>Travel Details</h4> */}
                 <p><strong>Destination:</strong> {selectedUser.destination}</p>
-                <p><strong>No. of Persons:</strong> {selectedUser.persons}</p>
+                <p><strong>No. of Persons:</strong> {selectedUser.number_of_persons}</p>
               </div>
             </div>
 

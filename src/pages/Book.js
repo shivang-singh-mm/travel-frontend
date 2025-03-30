@@ -2,28 +2,43 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Form, Button } from 'react-bootstrap';
 import './Book.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Book = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    tourPackage: '',
+    number: '',
+    destination: '',
     date: '',
-    message: ''
+    number_of_persons: ''
   });
+
+  const navigate = useNavigate()
+
+  const baseurl = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Booking Successful! We will contact you soon.');
+
+    try {
+      const finalData = { ...formData };
+      await axios.post(`${baseurl}/api/enquiry`, finalData);
+      alert('Enquiry sent successfully!');
+      setFormData({ name: '', email: '', number: '', destination: '', date: '', number_of_persons: '' });
+      navigate('/')
+    } catch (error) {
+      console.error('Error submitting enquiry:', error);
+    }
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="booking-page1"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -35,37 +50,39 @@ const Book = () => {
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" name="name" onChange={handleChange} required />
         </Form.Group>
+        <br />
 
         <Form.Group>
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" name="email" onChange={handleChange} required />
         </Form.Group>
-
+        <br />
         <Form.Group>
-          <Form.Label>Phone</Form.Label>
-          <Form.Control type="text" name="phone" onChange={handleChange} required />
+          <Form.Label>Number</Form.Label>
+          <Form.Control type="text" name="number" onChange={handleChange} required />
         </Form.Group>
-
+        <br />
+        <Form.Group>
+          <Form.Label>Number Of Persons</Form.Label>
+          <Form.Control type="number" name="number_of_persons" onChange={handleChange} required />
+        </Form.Group>
+        <br />
         <Form.Group>
           <Form.Label>Select Tour Package</Form.Label>
-          <Form.Control as="select" name="tourPackage" onChange={handleChange} required>
+          <Form.Control as="select" name="destination" onChange={handleChange} required>
             <option value="">Select...</option>
             <option value="Kashmir">Kashmir</option>
             <option value="Rajasthan">Rajasthan</option>
             <option value="Ladakh">Ladakh</option>
           </Form.Control>
         </Form.Group>
-
+        <br />
         <Form.Group>
           <Form.Label>Travel Date</Form.Label>
           <Form.Control type="date" name="date" onChange={handleChange} required />
         </Form.Group>
-
-        <Form.Group>
-          <Form.Label>Additional Message</Form.Label>
-          <Form.Control as="textarea" rows={3} name="message" onChange={handleChange} />
-        </Form.Group>
-
+        <br />
+        <br />
         <Button className="submit-btn1" type="submit">Submit Booking</Button>
       </Form>
     </motion.div>

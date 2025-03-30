@@ -2,8 +2,29 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import './Footer.css';
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function Footer() {
+
+
+  const [packages, setPackages] = useState([]);
+
+  const baseurl = process.env.REACT_APP_API_URL;
+
+  useEffect(() => {
+    async function fetchPackages() {
+      try {
+        const response = await axios.get(`${baseurl}/api/tour`);
+        setPackages(response.data);
+      } catch (error) {
+        console.error("Error fetching packages:", error);
+      }
+    }
+    fetchPackages();
+  }, []);
+
   return (
     <div className='footer-container'>
       <div className='footer-content'>
@@ -15,10 +36,9 @@ function Footer() {
         <div className='footer-section'>
           <h3 className="footer-title">Popular Destinations</h3>
           <ul>
-            <p>🏰 Rajasthan Tour Packages</p>
-            <p>🌴 Kerala Tour Packages</p>
-            <p>🏛️ Golden Triangle Tours</p>
-            <p>🏖️ Goa Tour Packages</p>
+            {packages.map(item => (
+              <p>{item.city}</p>
+            ))}
           </ul>
         </div>
 

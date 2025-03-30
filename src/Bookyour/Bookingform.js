@@ -1,47 +1,33 @@
 import React, { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import "./Bookingform.css";
+import axios from "axios";
 
 function BookingForm() {
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     destination: "",
-    phoneNumber: "",
-    numOfPersons: "",
+    number: "",
+    number_of_persons: "",
     date: "",
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const baseurl = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://your-backend.com/api/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert("Booking submitted successfully!");
-        setFormData({
-          fullName: "",
-          email: "",
-          destination: "",
-          phoneNumber: "",
-          numOfPersons: "",
-          date: "",
-        });
-      } else {
-        alert("Failed to submit booking. Please try again.");
-      }
+      const finalData = { ...formData };
+      await axios.post(`${baseurl}/api/enquiry`, finalData);
+      alert('Enquiry sent successfully!');
+      setFormData({ name: '', email: '', number: '', destination: '', date: '', number_of_persons: '' });
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while submitting the form.");
+      console.error('Error submitting enquiry:', error);
     }
   };
 
@@ -54,10 +40,10 @@ function BookingForm() {
             <Col md={6} sm={12} className="mb-3">
               <Form.Control
                 type="text"
-                name="fullName"
+                name="name"
                 placeholder="✏️ Full Name"
                 className="input-field"
-                value={formData.fullName}
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
@@ -90,10 +76,10 @@ function BookingForm() {
             <Col md={4} sm={6}>
               <Form.Control
                 type="text"
-                name="phoneNumber"
+                name="number"
                 placeholder="📞 Phone Number"
                 className="input-field"
-                value={formData.phoneNumber}
+                value={formData.number}
                 onChange={handleChange}
                 required
               />
@@ -101,10 +87,10 @@ function BookingForm() {
             <Col md={4} sm={6}>
               <Form.Control
                 type="number"
-                name="numOfPersons"
+                name="number_of_persons"
                 placeholder="👨‍👩‍👧‍👦 No. of Persons"
                 className="input-field"
-                value={formData.numOfPersons}
+                value={formData.number_of_persons}
                 onChange={handleChange}
                 required
               />
