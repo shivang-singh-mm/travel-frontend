@@ -57,9 +57,8 @@ const PostTourPackage = () => {
       const destinationPhoto = await uploadImage(selectedImages.destinationImage);
       const cabPhoto = await uploadImage(selectedImages.cabImage);
 
-      const finalData = { ...tourPackage, coverUrl, hotel_url: hotelPhoto, destination_url: destinationPhoto, cab_url: cabPhoto };
+      const finalData = { ...tourPackage, cover_url: coverUrl, hotel_url: hotelPhoto, destination_url: destinationPhoto, cab_url: cabPhoto };
       await axios.post(`${baseurl}/api/tour`, finalData);
-      console.log(`${baseurl}/api/tour`)
       alert('Tour Package added successfully!');
 
       setTourPackage({ city: '', coverUrl: '', description: '', pricing: '', included: '', destinations_covered: '', hotel_facilities: '', cab_available: '', hotel_photos: '', destination_photos: '', cab_photos: '', popular_package: '' });

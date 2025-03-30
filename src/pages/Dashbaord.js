@@ -58,7 +58,7 @@ const Dashboard = () => {
             <li key={dest.id} className='dashboard_list'>
               {dest.title} - {dest.description}
               <div>
-                <button className="edit-btn2">Edit</button>
+                {/* <button className="edit-btn2">Edit</button> */}
                 <button className="delete-btn2">Delete</button>
               </div>
             </li>
@@ -76,7 +76,7 @@ const Dashboard = () => {
             <li key={pkg.id} className='dashboard_list'>
               {pkg.city} - {pkg.description}
               <div>
-                <button className="edit-btn2">Edit</button>
+                {/* <button className="edit-btn2">Edit</button> */}
                 <button className="delete-btn2">Delete</button>
               </div>
             </li>
@@ -94,7 +94,7 @@ const Dashboard = () => {
             <li key={feed.id} className='dashboard_list'>
               {feed.name}: {feed.review}
               <div>
-                <button className="edit-btn2">Edit</button>
+                {/* <button className="edit-btn2">Edit</button> */}
                 <button className="delete-btn2">Delete</button>
               </div>
             </li>
@@ -112,7 +112,7 @@ const Dashboard = () => {
             <li key={post.id} className='dashboard_list'>
               <strong>{post.title}</strong> - {post.content}
               <div>
-                <button className="edit-btn2">Edit</button>
+                {/* <button className="edit-btn2">Edit</button> */}
                 <button className="delete-btn2">Delete</button>
               </div>
             </li>

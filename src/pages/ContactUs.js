@@ -7,7 +7,7 @@ const ContactUs = () => {
       <div className="contact-hero">
         <h1>Contact Us</h1>
       </div>
-      
+
       {/* Contact Form Section */}
       <div className="contact-container">
         <h2>Get in Touch</h2>
@@ -24,13 +24,16 @@ const ContactUs = () => {
         <h2>Contact Information</h2>
         <div className="contact-details">
           <p>
-            <strong>Email:</strong> contact@travelexplorer.com
+            <strong>Email:</strong> email@angeldestination.com
           </p>
           <p>
-            <strong>Phone:</strong> +91 98765 43210
+            <strong>Phone:</strong> +91 9773980709
           </p>
           <p>
-            <strong>Address:</strong> 123, Wanderlust Street, New Delhi, India
+            <strong>Address:</strong> Surajpur
+            Greater Noida
+            Gautam budh nagar
+            Pincode 201306
           </p>
         </div>
       </div>
