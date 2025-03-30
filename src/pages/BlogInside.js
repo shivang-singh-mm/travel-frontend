@@ -1,6 +1,8 @@
-import React from 'react';
- 
+import React, { useEffect, useState } from 'react';
+
 import "./BlogInside.css";
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const destinations = [
   {
@@ -12,16 +14,35 @@ const destinations = [
 ];
 
 function BlogInside() {
+  const [blog, setBlogs] = useState([]);
+
+  const baseurl = process.env.REACT_APP_API_URL
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get("id");
+
+  async function fetchBlogs() {
+    const fetchBlogsRes = await axios.get(`${baseurl}/api/blog/${id}`);
+    console.log(fetchBlogsRes.data)
+    setBlogs(fetchBlogsRes.data);
+  }
+
+  useEffect(() => {
+    fetchBlogs()
+  }, [location.search])
+
+
   return (
     <div className="blog-container">
       <div className="column">
-        {destinations.map((destination) => (
-          <div key={destination.id} className="tittle-z blog-section">
-            <h2>{destination.title}</h2>
-            <img src={destination.image} alt={destination.title} className="blog-image" />
-            <p>{destination.description}</p>
-          </div>
-        ))}
+        {/* {blog.map((item) => ( */}
+        <div key={blog.id} className="tittle-z blog-section">
+          <h2>{blog.title}</h2>
+          <img src={blog.url} alt={blog.title} className="blog-image" />
+          <p>{blog.description}</p>
+        </div>
+        {/* ))} */}
       </div>
     </div>
   );
