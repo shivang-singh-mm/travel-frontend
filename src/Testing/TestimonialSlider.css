@@ -1,11 +1,14 @@
 /* Prevent Horizontal Scrolling */
-body, html {
+body,
+html {
   overflow-x: hidden;
   width: 100%;
 }
-.testimonial-container h2{
+
+.testimonial-container h2 {
   color: #005aa7;
 }
+
 /* Ensure Container Stays Within Viewport */
 .testimonial-section {
   width: 100vw;
