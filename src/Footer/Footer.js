@@ -25,7 +25,7 @@ function Footer() {
         <div className='footer-section newsletter'>
           <h3 className="footer-title">Contact Information</h3>
           <p><FaMapMarkerAlt className="icon" /> D-7/296, Near Rohini West Metro Station, Delhi - 110085</p>
-          <p><FaEnvelope className="icon" /> info@joyplusholidays.com</p>
+          <p><FaEnvelope className="icon" /> info@angeldestination.com</p>
           <p><FaPhoneAlt className="icon" /> +91-93104-15267, 011-35959936</p>
         </div>
       </div>

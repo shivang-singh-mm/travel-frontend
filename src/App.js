@@ -13,6 +13,7 @@ import BlogInside from './pages/BlogInside.js';
 import PostDestination from './pages/PostDestination.js';
 import PostTourPackage from './pages/TourPackageForm.js';
 import PopularDestination from './pages/PopularDestinationForm.js';
+import PopularDestination2   from './pages/PopularDestinationForm2.js';
 import PostReview from './pages/UserReviewForm.js';
 import PostBlog from './pages/BlogForm.js';
 import CityTour from './pages/CityTour.js';
@@ -49,6 +50,7 @@ function App() {
 
         <Route path="/dashboard/tour-package" element={<PostTourPackage />} />
         <Route path="/dashboard/popular-destination" element={<PopularDestination />} />
+        <Route path="/dashboard/popular-destination2" element={<PopularDestination2 />} />
         <Route path="/dashboard/review" element={<PostReview />} />
         <Route path="/dashboard/blog" element={<PostBlog />} />
 

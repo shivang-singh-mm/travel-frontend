@@ -30,7 +30,7 @@ function BasicExample() {
     <Navbar expanded={expanded} expand="lg" className="custom-navbar fixed-top">
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand">
-          Traveller
+          Angel Destination
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

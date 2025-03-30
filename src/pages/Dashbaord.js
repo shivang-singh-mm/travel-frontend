@@ -38,24 +38,17 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container2">
-
-      <h2 className="tittle-tour">Admin Dashboard</h2>
-      <section>
-        <h3>View Enquiry</h3>
-        <Link to='/dashboard/popular-destination2'>
-          <button className="add-btn">Add Destination</button></Link>
-        <ul>
-          {enquiry == [] ? <></> : enquiry.map(dest => (
-            <li key={dest.id} className='dashboard_list'>
-              {dest.title} - {dest.description}
-              <div>
-                <button className="edit-btn2">Edit</button>
-                <button className="delete-btn2">Delete</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+     <h2 className="tittle-tour">
+  Admin Dashboard
+  <div className="view-enquiry-container">
+    <Link to='/dashboard/popular-destination2'>
+      <button className="view-enquiry-btn">View Enquiry</button>
+    </Link>
+  </div>
+</h2>
+     
+ 
+       
       <section>
         <h3>Popular Destinations</h3>
         <Link to='/dashboard/popular-destination'>

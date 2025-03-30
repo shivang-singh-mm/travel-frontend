@@ -14,9 +14,26 @@ h3 {
 }
 
 .dashboard-container2 h2 {
-  margin-top: 50px;
+  margin-top: 80px;
   font-weight: 700;
 }
+.view-enquiry-container {
+  float: right;
+}
+
+.view-enquiry-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.view-enquiry-btn:hover {
+  background-color: #0056b3;
+}
+
 
 section {
   background: #ffffff;
