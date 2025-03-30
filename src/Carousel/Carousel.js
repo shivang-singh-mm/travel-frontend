@@ -48,7 +48,7 @@ const CardSlider = () => {
 
   return (
     <div className="slider-container-a">
-      <h1 className="title-a">Our Popular Packages</h1>
+      <h1 className="title-a" style={{ color: "#005aa7" }}>Our Popular Packages</h1>
       <Slider {...settings}>
         {cardsData.map((card) => (
           <div key={card.id} className="card-a">

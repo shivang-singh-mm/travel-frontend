@@ -16,6 +16,8 @@ import PopularDestination from './pages/PopularDestinationForm.js';
 import PostReview from './pages/UserReviewForm.js';
 import PostBlog from './pages/BlogForm.js';
 import CityTour from './pages/CityTour.js';
+import PrivateRoute from './pages/PrivateRoute.js';
+import Login from './pages/Login.js';
 
 function App() {
   return (
@@ -25,7 +27,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogsinside" element={<BlogInside />} />
         <Route path="/PostDestination" element={<PostDestination />} />
@@ -45,12 +46,12 @@ function App() {
         <Route path="/golden-triangle" element={<GoldenTriangle />} />
         <Route path="/same-day" element={<SameDayTour />} />
 
-
-
-        <Route path="/dashboard/tour-package" element={<PostTourPackage />} />
-        <Route path="/dashboard/popular-destination" element={<PopularDestination />} />
-        <Route path="/dashboard/review" element={<PostReview />} />
-        <Route path="/dashboard/blog" element={<PostBlog />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
+        <Route path="/dashboard/tour-package" element={<PrivateRoute><PostTourPackage /></PrivateRoute>} />
+        <Route path="/dashboard/popular-destination" element={<PrivateRoute><PopularDestination /></PrivateRoute>} />
+        <Route path="/dashboard/review" element={<PrivateRoute><PostReview /></PrivateRoute>} />
+        <Route path="/dashboard/blog" element={<PrivateRoute><PostBlog /></PrivateRoute>} />
 
 
       </Routes>

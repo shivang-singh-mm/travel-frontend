@@ -1,10 +1,8 @@
 .slider-container-a {
   width: 85%;
- 
+  text-align: center;
   margin: auto;
   padding: 20px;
-
-
 }
 
 .tittle-a {
@@ -19,12 +17,12 @@
 }
 
 .card-a {
-  background-color:rgb(186, 180, 225);
+  background-color: rgb(118, 203, 253);
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
   padding: 15px;
-  height: 400px;
+  height: 450px;
   /* Increased height for better layout */
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -94,7 +92,6 @@
 /* Adjust margin between slides */
 .slick-slide {
   padding: 10px;
-
 }
 
 arrows {

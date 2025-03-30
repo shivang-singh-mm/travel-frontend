@@ -30,7 +30,7 @@ function BasicExample() {
     <Navbar expanded={expanded} expand="lg" className="custom-navbar fixed-top">
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand">
-          Traveller
+          Angel Destination
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
@@ -41,7 +41,7 @@ function BasicExample() {
             <Nav.Link as={Link} to="/" className="nav-link" onClick={() => setExpanded(false)}>HOME</Nav.Link>
             <Nav.Link as={Link} to="/aboutus" className="nav-link" onClick={() => setExpanded(false)}>ABOUT US</Nav.Link>
             <Nav.Link as={Link} to="/blogs" className="nav-link" onClick={() => setExpanded(false)}>BLOGS</Nav.Link>
-            <NavDropdown title="Cities" id="basic-nav-dropdown" className="dropdown-hover">
+            <NavDropdown title="Packages" id="basic-nav-dropdown" className="dropdown-hover">
               {packages.length === 0 ? (
                 <NavDropdown.Item disabled>Loading...</NavDropdown.Item>
               ) : (
