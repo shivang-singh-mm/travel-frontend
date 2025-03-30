@@ -57,9 +57,10 @@ const CardSlider = () => {
             </div>
             <div className="card-content-a">
               <h3>{card.city}</h3>
-              <p><FaCar /> Car Rentals</p>
-              <p><FaHotel /> Hotel Facilities</p>
-              <p><FaUtensils /> Food Availability</p>
+              <p> <FaCar /> Car Rentals <FaHotel /> Hotel Facilities <FaUtensils /> Food</p>
+             
+              
+              
               <button className="view-more-a">View More</button>
             </div>
           </div>
