@@ -65,7 +65,7 @@ function Blog() {
                 <Link to={`/blogsinside?id=${post.id}`}><img src={post.url} className="card-img-top" alt={post.title} /></Link>
                 <div className="card-body">
                   <Link to={`/blogsinside?id=${post.id}`}><h5 className="card-title">{post.title}</h5></Link>
-                  <p className="card-text">{post.description}</p>
+                  {/* <p className="card-text">{post.description}</p> */}
                 </div>
               </div>
             </div>
