@@ -22,7 +22,7 @@ const Home = () => {
           alt="Travel Agency"
         />
         <div className="overlay">
-          <h1>Welcome to Traveller</h1>
+          <h1 style={{ fontSize: '50px' }}>Welcome to Angel Destination</h1>
           <Button onClick={scrollToForm} className="explore-btn">
             Book Now Explore Now
           </Button>
@@ -87,8 +87,6 @@ const Home = () => {
             <p className="promo-text">
               Embark on a journey filled with breathtaking landscapes, rich cultures, and unforgettable experiences. Whether you're dreaming of a tropical beach escape, an adventurous mountain trek, or a vibrant city tour, we have the perfect destination for you.
               <br />Our expertly curated travel packages ensure a hassle-free experience, tailored to your preferences and budget. <br />
-              From luxury getaways to budget-friendly explorations, we make travel seamless and memorable.
-              <br />Let us handle the details while you focus on making memories. Start planning your dream vacation today and turn your travel dreams into reality—because your next great adventure is just a step away!
               {/* <ul className="promo-text">
                 <li className="promo-text">At Traveller,we believe that travel is more than just a destination —it's an experience</li>
                 <li className="promo-text">Dreaming of breathtaking mountains,beaches,or cityscapes, we've got you covered.</li>

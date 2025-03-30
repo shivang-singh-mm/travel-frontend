@@ -103,3 +103,10 @@ arrows {
   color: #005aa7;
   padding: 0 !important;
 }
+
+
+@media (max-width: 768px) {
+  .slider-container-a {
+    width: 100%;
+  }
+}
