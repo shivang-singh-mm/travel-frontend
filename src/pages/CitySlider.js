@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './CitySlider.css'
 
 const dummyImages = [
   "https://w0.peakpx.com/wallpaper/928/983/HD-wallpaper-landscape-14-temple-india-tourist-places-cool-places-to-visit-west-bengal.jpg",
@@ -11,7 +12,7 @@ const dummyImages = [
 
 function CitySlider() {
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0 city-scroll">
       <Carousel interval={3000} indicators={false} className="w-100">
         {dummyImages.map((image, index) => (
           <Carousel.Item key={index}>

@@ -1,0 +1,10 @@
+.city-scroll {
+    width: 50%;
+}
+
+
+@media (max-width: 992px) {
+    .city-scroll {
+        width: 90%;
+    }
+}
