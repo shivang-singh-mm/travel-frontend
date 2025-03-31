@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import axios from "axios";
-import { FaCar, FaHotel, FaUtensils } from "react-icons/fa"; // Importing icons
+import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";  
 
 const CardSlider = () => {
   const [cardsData, setCardsData] = useState([]);

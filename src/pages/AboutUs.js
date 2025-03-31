@@ -133,12 +133,8 @@ const teamMembers = [
     image:
       "https://www.emeraldcruises.eu/-/media/project/scenic/emerald-cruises/travel-agent-hub/ours-sales-team/d_ecer-two_guests_with_cruise_director.jpg?rev=4ac6a19446404789bded0ad61fa64f98",
   },
-  {
-    name: "James Brown",
-    role: "Adventure Specialist",
-    image:
-      "https://www.emeraldcruises.co.uk/-/media/project/scenic/emerald-cruises/travel-agent-hub/events/uk-trade-events/d_trade_william-young.jpg?rev=30e9cb7023af410aad98011716c55387",
-  },
+  
+  
 ];
 
 export default AboutUs;

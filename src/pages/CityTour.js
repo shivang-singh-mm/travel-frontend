@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "./TourPage.css";
 import axios from "axios";
+import CitySlider from "./CitySlider";
+ 
 
 const commonImage =
   "https://www.holidify.com/images/bgImages/RAJASTHAN.jpg"; // Common image for all cards
@@ -39,22 +41,77 @@ const CityTour = () => {
       {/* Hero Section */}
       <motion.div className="tour-hero">
         <h1 className="tour-title">{city.city} Tour Packages</h1>
-        <motion.img
+        {/* <motion.img
           src={city?.cover_url}
           alt={city?.city}
           className="tour-image"
-        />
+        /> */}
+        <CitySlider/>
+       
+
+       
       </motion.div>
 
       <motion.p className="tour-description">
-        {city?.description}
+        
+        <p>{city?.description}</p>
       </motion.p>
+
+      <div className="destinations_covered"> <h2 className="tittle-a"> Destinations Covered</h2>
+
+      <p style={{ 
+  textAlign: "center", 
+  width: "80%", 
+  margin: "0 auto" 
+}}>
+  {city?.destinations_covered}
+</p>
+
+
+      <Container className="tour-info-cards">
+  <Row className="g-4 justify-content-center">
+  
+    <Col md={4}>
+      <Card className="tour-card" style={{ height: "400px" }}>
+        <img 
+          src="https://www.tripsavvy.com/thmb/IY2hCceGjqbC5zXbQVicJZykA88=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-119793001-5a02ace422fa3a0037422646.jpg" 
+          alt="Tour Spot" 
+          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+        />
+      </Card>
+    </Col>
+
+    <Col md={4}>
+      <Card className="tour-card" style={{ height: "400px" }}>
+        <img 
+          src="https://thumbs.dreamstime.com/b/stunning-view-green-tea-plantations-munnar-kerala-india-popular-tourist-destination-known-its-lush-greenery-scenic-368038877.jpg" 
+          alt="Tour Spot" 
+          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+        />
+      </Card>
+    </Col>
+
+    <Col md={4}>
+      <Card className="tour-card" style={{ height: "400px" }}>
+        <img 
+          src="https://alxtrip.online/_next/image?url=https%3A%2F%2Fpubsquare.b-cdn.net%2Fpublisher%2FAlxTrip%2Fmedia%2Fmedia_files%2FUBGHPXURIY.png&w=1080&q=75" 
+          alt="Tour Spot" 
+          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+        />
+      </Card>
+    </Col>
+
+  </Row>
+</Container>
+
+
+      </div> 
 
       {/* Three Cards with One Common Image */}
       <Container className="tour-info-cards">
-        <Row className="g-4">
+        <Row className="g-4 justify-content-center">
           {/* Destination Card */}
-          <Col md={4}>
+          {/* <Col md={4}>
             <Card className="tour-card">
               <Card.Img variant="top" src={city?.destination_url} alt="Rajasthan View" className="tour-card-img" />
               <Card.Body>
@@ -64,10 +121,10 @@ const CityTour = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
 
           {/* Hotel Facilities Card */}
-          <Col md={4}>
+          <Col md={5}>
             <Card className="tour-card">
               <Card.Img variant="top" src={city?.hotel_url} alt="Rajasthan View" className="tour-card-img" />
               <Card.Body>
@@ -78,7 +135,7 @@ const CityTour = () => {
           </Col>
 
           {/* Tour Duration Card */}
-          <Col md={4}>
+          <Col md={5}>
             <Card className="tour-card">
               <Card.Img variant="top" src={city?.cab_url} alt="Rajasthan View" className="tour-card-img" />
               <Card.Body>

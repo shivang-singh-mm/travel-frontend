@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Button } from "react-bootstrap";
 import BookingForm from "../Bookyour/Bookingform";
 import Carousel from "../Carousel/Carousel";
+import Discounts from "../Carousel/Discounts.js";
 import Gallery from "../Gallery";
 import TestimonialSlider from "../Testing/Testing";
 import '../pages/Home.css'
@@ -32,7 +33,8 @@ const Home = () => {
       <div ref={formRef} style={{ backgroundColor: "#029feef9" }}>
         <BookingForm />
       </div>
-
+       
+      <Discounts/>
       <Carousel />
       <Banner />
       <Gallery />
