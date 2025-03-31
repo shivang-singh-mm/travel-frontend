@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, UserRound, Phone, Mail } from "lucide-react";
+import { Calendar, UserRound, Phone, Mail, PlaneIcon } from "lucide-react";
 
 const Bookingform = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ const Bookingform = () => {
     adults: 1,
     children: 0,
     date: "",
+    destination: "",
   });
 
   const handleSubmit = (e) => {
@@ -100,9 +101,13 @@ const Bookingform = () => {
               ))}
             </select>
 
-            <input type="date" value={formData.date}
-              onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-              style={{ padding: "12px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
+            <div style={{ position: "relative" }}>
+              <PlaneIcon style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#9ca3af" }} size={20} />
+              <input type="text" placeholder="Destination" value={formData.destination}
+                onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
+                style={{ width: "100%", padding: "12px 12px 12px 40px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
+            </div>
+
           </div>
 
           {/** Submit Button **/}
