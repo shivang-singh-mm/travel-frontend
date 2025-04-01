@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import axios from "axios";
 import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CardSlider = () => {
   const [cardsData, setCardsData] = useState([]);
@@ -60,7 +61,7 @@ const CardSlider = () => {
               <p><FaCar /> Car Rentals</p>
               <p><FaHotel /> Hotel Facilities</p>
               <p><FaUtensils /> Food Availability</p>
-              <button className="view-more-a">View More</button>
+              <Link to={`/city?id=${card.id}`}><button className="view-more-a">View More</button></Link>
             </div>
           </div>
         ))}

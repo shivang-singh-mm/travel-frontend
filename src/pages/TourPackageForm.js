@@ -125,7 +125,7 @@ const PostTourPackage = () => {
         <textarea name="cab_available" placeholder="Cab Available *" value={tourPackage.cab_available} onChange={handleInputChange} required />
         <textarea name="popular_package" placeholder="Popular Package *" value={tourPackage.popular_package} onChange={handleInputChange} required />
 
-        <label>Cover Images (Multiple Allowed):</label>
+        <label>Cover Images (Exactly 3 Required):</label>
         <input type="file" accept="image/*" multiple onChange={(e) => handleImageSelection(e, 'coverImages')} />
 
         <label>Hotel Photo:</label>
