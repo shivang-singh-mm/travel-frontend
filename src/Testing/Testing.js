@@ -9,7 +9,6 @@ import axios from 'axios';
 
 
 const renderStars = (rating) => {
-  console.log(rating)
   return (
     <>
       {[...Array(rating)].map((_, index) => (

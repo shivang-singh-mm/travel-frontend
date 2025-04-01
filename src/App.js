@@ -19,6 +19,7 @@ import PostBlog from './pages/BlogForm.js';
 import CityTour from './pages/CityTour.js';
 import PrivateRoute from './pages/PrivateRoute.js';
 import Login from './pages/Login.js';
+import PostOffer from './pages/OfferForm.js';
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route path="/dashboard/enquiry" element={<PopularDestination2 />} />
         <Route path="/dashboard/review" element={<PrivateRoute><PostReview /></PrivateRoute>} />
         <Route path="/dashboard/blog" element={<PrivateRoute><PostBlog /></PrivateRoute>} />
+        <Route path="/dashboard/offer" element={<PrivateRoute><PostOffer /></PrivateRoute>} />
 
 
       </Routes>

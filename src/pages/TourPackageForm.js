@@ -11,26 +11,37 @@ const PostTourPackage = () => {
     destinations_covered: '',
     hotel_facilities: '',
     cab_available: '',
-    hotel_photos: '',
-    destination_photos: '',
-    cab_photos: '',
     popular_package: ''
   });
 
   const [selectedImages, setSelectedImages] = useState({
-    coverImage: null,
+    coverImages: [],
     hotelImage: null,
-    destinationImage: null,
+    destinationImages: [],
     cabImage: null
   });
-  const baseurl = process.env.REACT_APP_API_URL
+
+  const baseurl = process.env.REACT_APP_API_URL;
 
   const handleInputChange = (e) => {
     setTourPackage({ ...tourPackage, [e.target.name]: e.target.value });
   };
 
   const handleImageSelection = (e, type) => {
-    setSelectedImages((prev) => ({ ...prev, [type]: e.target.files[0] }));
+    const files = Array.from(e.target.files);
+
+    if (type === 'coverImages' || type === 'destinationImages') {
+      if (files.length !== 3) {
+        alert(`Please upload exactly 3 ${type === 'coverImages' ? 'cover' : 'destination'} images.`);
+        return;
+      }
+      setSelectedImages((prev) => ({
+        ...prev,
+        [type]: files
+      }));
+    } else {
+      setSelectedImages((prev) => ({ ...prev, [type]: e.target.files[0] }));
+    }
   };
 
   const uploadImage = async (file) => {
@@ -51,18 +62,51 @@ const PostTourPackage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (selectedImages.coverImages.length !== 3) {
+      alert('Please upload exactly 3 cover images.');
+      return;
+    }
+    if (selectedImages.destinationImages.length !== 3) {
+      alert('Please upload exactly 3 destination images.');
+      return;
+    }
+
     try {
-      const coverUrl = await uploadImage(selectedImages.coverImage);
+      const coverPhotos = await Promise.all(selectedImages.coverImages.map(uploadImage));
       const hotelPhoto = await uploadImage(selectedImages.hotelImage);
-      const destinationPhoto = await uploadImage(selectedImages.destinationImage);
+      const destinationPhotos = await Promise.all(selectedImages.destinationImages.map(uploadImage));
       const cabPhoto = await uploadImage(selectedImages.cabImage);
 
-      const finalData = { ...tourPackage, cover_url: coverUrl, hotel_url: hotelPhoto, destination_url: destinationPhoto, cab_url: cabPhoto };
+      console.log(coverPhotos)
+
+      const finalData = {
+        ...tourPackage,
+        cover_url: coverPhotos,
+        hotel_url: hotelPhoto || '',
+        destination_url: destinationPhotos,
+        cab_url: cabPhoto || '',
+      };
+
       await axios.post(`${baseurl}/api/tour`, finalData);
       alert('Tour Package added successfully!');
 
-      setTourPackage({ city: '', coverUrl: '', description: '', pricing: '', included: '', destinations_covered: '', hotel_facilities: '', cab_available: '', hotel_photos: '', destination_photos: '', cab_photos: '', popular_package: '' });
-      setSelectedImages({ coverImage: null, hotelImage: null, destinationImage: null, cabImage: null });
+      setTourPackage({
+        city: '',
+        description: '',
+        pricing: '',
+        included: '',
+        destinations_covered: '',
+        hotel_facilities: '',
+        cab_available: '',
+        popular_package: ''
+      });
+
+      setSelectedImages({
+        coverImages: [],
+        hotelImage: null,
+        destinationImages: [],
+        cabImage: null
+      });
     } catch (error) {
       console.error('Error submitting package:', error);
     }
@@ -77,18 +121,18 @@ const PostTourPackage = () => {
         <input type="text" name="pricing" placeholder="Pricing *" value={tourPackage.pricing} onChange={handleInputChange} required />
         <input type="text" name="included" placeholder="Included Services *" value={tourPackage.included} onChange={handleInputChange} required />
         <input type="text" name="destinations_covered" placeholder="Destinations Covered *" value={tourPackage.destinations_covered} onChange={handleInputChange} required />
-        <textarea type="text" name="hotel_facilities" placeholder="Hotel Facilities *" value={tourPackage.hotel_facilities} onChange={handleInputChange} required />
-        <textarea type="text" name="cab_available" placeholder="Cab Available *" value={tourPackage.cab_available} onChange={handleInputChange} required />
-        <textarea type="text" name="popular_package" placeholder="Popular Package *" value={tourPackage.popular_package} onChange={handleInputChange} required />
+        <textarea name="hotel_facilities" placeholder="Hotel Facilities *" value={tourPackage.hotel_facilities} onChange={handleInputChange} required />
+        <textarea name="cab_available" placeholder="Cab Available *" value={tourPackage.cab_available} onChange={handleInputChange} required />
+        <textarea name="popular_package" placeholder="Popular Package *" value={tourPackage.popular_package} onChange={handleInputChange} required />
 
-        <label>Cover Image:</label>
-        <input type="file" accept="image/*" onChange={(e) => handleImageSelection(e, 'coverImage')} />
+        <label>Cover Images (Multiple Allowed):</label>
+        <input type="file" accept="image/*" multiple onChange={(e) => handleImageSelection(e, 'coverImages')} />
 
         <label>Hotel Photo:</label>
         <input type="file" accept="image/*" onChange={(e) => handleImageSelection(e, 'hotelImage')} />
 
-        <label>Destination Photo:</label>
-        <input type="file" accept="image/*" onChange={(e) => handleImageSelection(e, 'destinationImage')} />
+        <label>Destination Photos (Exactly 3 Required):</label>
+        <input type="file" accept="image/*" multiple onChange={(e) => handleImageSelection(e, 'destinationImages')} />
 
         <label>Cab Photo:</label>
         <input type="file" accept="image/*" onChange={(e) => handleImageSelection(e, 'cabImage')} />
@@ -100,3 +144,4 @@ const PostTourPackage = () => {
 };
 
 export default PostTourPackage;
+

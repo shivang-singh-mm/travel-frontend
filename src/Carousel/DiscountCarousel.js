@@ -3,9 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./DiscountCarousel.css";
-import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";  
+import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";
 
-const DiscountCarousel = () => {
+const DiscountCarousel = ({ url1, url2, url3, description1, description2, description3, title1, title2, title3 }) => {
+
+
   const settings = {
     dots: true,
     infinite: true,
@@ -24,22 +26,22 @@ const DiscountCarousel = () => {
   // Cards Data with Images
   const discountCards = [
     {
-      title: " Festive Hotel Stays",
-      desc: "Enjoy up to 40% off on luxurious hotels during Navratri! Stay close to Garba events & temples.",
-      
-      img: "https://image.cnbcfm.com/api/v1/image/107336102-1700284880470-gettyimages-663507425-56856f99-83eb-4196-8dfe-1b8d4b14bb77.jpeg?v=1700285095",
+      title: title1,
+      desc: description1,
+
+      img: url1,
     },
     {
-      title: "Discounted Cabs & Rentals",
-      desc: "Book a cab & travel hassle-free! Special discounted rides for Navratri festival-goers.",
-      
-      img: "https://www.swantour.com/sites/default/files/inline-images/top-india-tour_0.jpg",
+      title: title2,
+      desc: description2,
+
+      img: url2,
     },
     {
-      title: " Delicious Festive Cuisine",
-      desc: "Savor the authentic Navratri flavors with exclusive food offers on Sattvic meals & snacks.",
-      
-      img: "https://www.indiatraveltours.com/images/golden-triangle-delhi-agra-jaipur-tour.jpg",
+      title: title3,
+      desc: description3,
+
+      img: url3,
     },
   ];
 

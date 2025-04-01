@@ -12,10 +12,11 @@ const Book = () => {
     number: '',
     destination: '',
     date: '',
-    number_of_persons: ''
+    childs: '',
+    adults: ''
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const baseurl = process.env.REACT_APP_API_URL;
 
@@ -30,8 +31,8 @@ const Book = () => {
       const finalData = { ...formData };
       await axios.post(`${baseurl}/api/enquiry`, finalData);
       alert('Enquiry sent successfully!');
-      setFormData({ name: '', email: '', number: '', destination: '', date: '', number_of_persons: '' });
-      navigate('/')
+      setFormData({ name: '', email: '', number: '', destination: '', date: '', childs: '', adults: '' });
+      navigate('/');
     } catch (error) {
       console.error('Error submitting enquiry:', error);
     }
@@ -63,18 +64,28 @@ const Book = () => {
         </Form.Group>
         <br />
         <Form.Group>
-          <Form.Label>Number Of Persons</Form.Label>
-          <Form.Control type="number" name="number_of_persons" onChange={handleChange} required />
+          <Form.Label>Childs</Form.Label>
+          <Form.Control as="select" name="childs" onChange={handleChange} required>
+            <option value="">...select</option>
+            {[...Array(10).keys()].map(num => (
+              <option key={num + 1} value={num + 1}>{num + 1}</option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+        <br />
+        <Form.Group>
+          <Form.Label>Adults</Form.Label>
+          <Form.Control as="select" name="adults" onChange={handleChange} required>
+            <option value="">...select</option>
+            {[...Array(10).keys()].map(num => (
+              <option key={num + 1} value={num + 1}>{num + 1}</option>
+            ))}
+          </Form.Control>
         </Form.Group>
         <br />
         <Form.Group>
           <Form.Label>Select Tour Package</Form.Label>
-          <Form.Control as="select" name="destination" onChange={handleChange} required>
-            <option value="">Select...</option>
-            <option value="Kashmir">Kashmir</option>
-            <option value="Rajasthan">Rajasthan</option>
-            <option value="Ladakh">Ladakh</option>
-          </Form.Control>
+          <Form.Control type="destination" name="destination" onChange={handleChange} required />
         </Form.Group>
         <br />
         <Form.Group>

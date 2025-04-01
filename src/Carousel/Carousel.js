@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import axios from "axios";
-import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";  
+import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";
 
 const CardSlider = () => {
   const [cardsData, setCardsData] = useState([]);
@@ -53,7 +53,7 @@ const CardSlider = () => {
         {cardsData.map((card) => (
           <div key={card.id} className="card-a">
             <div className="card-image-a">
-              <img src={card.cover_url} alt={card.city} />
+              <img src={card?.cover_url ? card?.cover_url[0] : card?.cover_url} alt={card.city} />
             </div>
             <div className="card-content-a">
               <h3>{card.city}</h3>

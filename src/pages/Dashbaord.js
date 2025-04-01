@@ -8,6 +8,7 @@ const Dashboard = () => {
   const [tourPackages, setTourPackages] = useState([]);
   const [feedbacks, setFeedbacks] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
+  const [offers, setOffers] = useState([]);
 
   const baseurl = process.env.REACT_APP_API_URL;
 
@@ -16,13 +17,15 @@ const Dashboard = () => {
     const fetchTourPackages = axios.get(`${baseurl}/api/tour/`);
     const fetchFeedbacks = axios.get(`${baseurl}/api/review/`);
     const fetchBlogPosts = axios.get(`${baseurl}/api/blog/`);
+    const fetchOffers = axios.get(`${baseurl}/api/offer/`);
 
-    Promise.all([fetchPopularDestinations, fetchTourPackages, fetchFeedbacks, fetchBlogPosts])
-      .then(([popularDestinationsRes, tourPackagesRes, feedbacksRes, blogPostsRes]) => {
+    Promise.all([fetchPopularDestinations, fetchTourPackages, fetchFeedbacks, fetchBlogPosts, fetchOffers])
+      .then(([popularDestinationsRes, tourPackagesRes, feedbacksRes, blogPostsRes, offersRes]) => {
         setPopularDestinations(popularDestinationsRes.data);
         setTourPackages(tourPackagesRes.data);
         setFeedbacks(feedbacksRes.data);
         setBlogPosts(blogPostsRes.data);
+        setOffers(offersRes.data);
       })
       .catch(error => console.error('Error fetching data:', error));
   }, []);
@@ -114,6 +117,24 @@ const Dashboard = () => {
           ))}
         </ul>
       </section>
+
+      <section>
+        <h3>Offers</h3>
+        <Link to='/dashboard/offer'>
+          <button className="add-btn2">Add Offer</button>
+        </Link>
+        <ul>
+          {offers.map(post => (
+            <li key={post.id} className='dashboard_list'>
+              <strong>{post.title}</strong> - {post.content}
+              <div>
+                <button className="delete-btn2" onClick={() => handleDelete(post.id, 'offer', setOffers)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
     </div>
   );
 };

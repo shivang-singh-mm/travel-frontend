@@ -1,20 +1,31 @@
 import React, { useState } from "react";
 import { Calendar, UserRound, Phone, Mail, PlaneIcon } from "lucide-react";
+import axios from "axios";
 
 const Bookingform = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
+    name: "",
+    number: "",
     email: "",
     adults: 1,
     children: 0,
     date: "",
-    destination: "",
   });
 
-  const handleSubmit = (e) => {
+  const baseurl = process.env.REACT_APP_API_URL;
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
+
+    try {
+      const finalData = { ...formData };
+      await axios.post(`${baseurl}/api/enquiry`, finalData);
+      alert('Enquiry sent successfully!');
+      setFormData({ name: '', email: '', number: '', adults: 1, date: '', children: 0 });
+      navigate('/')
+    } catch (error) {
+      console.error('Error submitting enquiry:', error);
+    }
   };
 
   return (
@@ -36,7 +47,7 @@ const Bookingform = () => {
       }}>
         <div
           style={{
-            backgroundColor: "#2563eb",
+            backgroundColor: "#0285c7f9",
             padding: "1rem",
             display: "flex",
             alignItems: "center",  // Ensures both items align properly
@@ -48,6 +59,7 @@ const Bookingform = () => {
             style={{
               fontSize: "1.25rem",
               color: "#ffffff",
+              height: "1vh",
               fontWeight: "600",
               display: "flex", // Ensures it aligns properly
             }}
@@ -61,16 +73,16 @@ const Bookingform = () => {
             {/** Full Name **/}
             <div style={{ position: "relative" }}>
               <UserRound style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#9ca3af" }} size={20} />
-              <input type="text" placeholder="Full Name" value={formData.fullName}
-                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+              <input type="text" placeholder="Full Name" value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 style={{ width: "100%", padding: "12px 12px 12px 40px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
             </div>
 
             {/** Phone **/}
             <div style={{ position: "relative" }}>
               <Phone style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#9ca3af" }} size={20} />
-              <input type="tel" placeholder="Phone Number" value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              <input type="tel" placeholder="Phone Number" value={formData.number}
+                onChange={(e) => setFormData({ ...formData, number: e.target.value })}
                 style={{ width: "100%", padding: "12px 12px 12px 40px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
             </div>
 
@@ -107,7 +119,6 @@ const Bookingform = () => {
                 onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                 style={{ width: "100%", padding: "12px 12px 12px 40px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
             </div>
-
           </div>
 
           {/** Submit Button **/}
