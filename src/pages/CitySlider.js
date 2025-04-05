@@ -15,7 +15,7 @@ function CitySlider({ images }) {
   return (
     <div className="container-fluid p-0 city-scroll">
       <Carousel interval={3000} indicators={false} className="w-100">
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <Carousel.Item key={index}>
             <img
               src={image}
