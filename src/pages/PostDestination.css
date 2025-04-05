@@ -8,12 +8,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 2;
+    margin-top: 100px;
+    margin-bottom: 25px;
 }
 
 
 .post-destination-container h2 {
     text-align: center;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .post-destination-container form input,
