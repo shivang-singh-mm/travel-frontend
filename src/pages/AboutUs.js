@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./AboutUs.css";
+import HolidayOffers from "../HolidayOffers/HolidayOffers";
  
  
 
@@ -53,6 +54,7 @@ Discover seamless travel experiences with Angel Destination, offering 600+ all-i
       {/* Why Choose Us Section */}
       <Container className="about-section">
         <h2 className="section-title text-center">Why Choose Us?</h2>
+        <p>At Angel Destination, we believe that travel is more than just a journey—it's about creating unforgettable memories. Here's why thousands of travelers trust us:</p>
         <Row>
           {features.map((feature, index) => (
             <Col md={4} key={index} className="feature-box">
@@ -75,29 +77,41 @@ Discover seamless travel experiences with Angel Destination, offering 600+ all-i
 
       {/* Meet Our Team Section */}
       <Container className="team-section">
-        <h2 className="section-title text-center">Meet Our Travel Experts</h2>
-        <Row className="justify-content-center">
-          {teamMembers.map((member, index) => (
-            <Col md={4} sm={6} key={index}>
-              <motion.div
-                className="team-card"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Card>
-                {images2.map((img, index) => (
-  <img key={index} src={img} alt={`Folder ${index}`} width={400}className="about-image" />
-))}
-                  <Card.Body>
-                    <Card.Title>{member.name}</Card.Title>
-                    <Card.Text className="about-saumya">{member.role}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </motion.div>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+  <h2 className="section-title text-center">Meet Our Travel Experts</h2>
+  <p>Our team of passionate travel experts is the heart of everything we do. With years of experience, insider knowledge, and a deep love for exploring the world, they’re here to craft the perfect trip just for you.</p>
+  <Row className="justify-content-center">
+    {teamMembers.map((member, index) => (
+      <Col md={6} sm={12} key={index}>
+        <motion.div
+          className="team-card mb-4"
+          whileHover={{ scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <Card className="p-3">
+            <Row className="align-items-center">
+              <Col md={5} xs={12} className="text-center">
+                <img
+                  src={images2[index % images2.length]}
+                  alt={`Member ${index}`}
+                  className="img-fluid rounded about-image"
+                />
+              </Col>
+              <Col md={7} xs={12}>
+                <Card.Body>
+                  <Card.Title>{member.name}</Card.Title>
+                  <Card.Text className="about-saumya">{member.role}</Card.Text>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </motion.div>
+      </Col>
+    ))}
+  </Row>
+</Container>
+      <div className="holidays-sections">
+      <HolidayOffers/></div>
+    
     </div>
   );
 };

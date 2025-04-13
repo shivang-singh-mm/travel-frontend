@@ -1,4 +1,4 @@
-.booking-form {
+/* .booking-form {
   text-align: center;
 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -59,4 +59,94 @@
     width: 90%;
     padding: 20px;
   }
+} */
+
+.booking-form-wrapper {
+  background-color: #f5f7fb;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+.booking-form-container {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.toasti{
+  background-color: transparent;
+  border: none;
+}
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0285c7;
+  margin-bottom: 1rem;
+
+}
+.form-label-header {
+  background-color: #145c9e;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: fit-content;
+  margin-bottom: 0; 
+  text-align: left;
+}
+.booking-form {
+  background: white;
+  border: 5px solid #cce3ff;
+   
+  padding: 1rem;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  width: 100%;
+}
+
+.booking-form button {
+  background-color: #e44b20;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.booking-form button:hover {
+  background-color: #cf3c14;
+}
+
+.Toastify__toast-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
 }

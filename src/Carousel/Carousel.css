@@ -8,6 +8,10 @@
 .tittle-a {
   color: #005aa7;
   text-align: center;
+  
+}
+.text-justify{
+  text-align: justify;
 }
 
 .slick-prev,
@@ -17,12 +21,12 @@
 }
 
 .card-a {
-  background-color: rgb(118, 203, 253);
+  background-color: white;
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
   padding: 15px;
-  height: 450px;
+  height: 470px;
   /* Increased height for better layout */
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -67,7 +71,7 @@
 }
 
 .card-content-a h3 {
-  color: #036691;
+  color: #588294;
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
@@ -76,18 +80,26 @@
   font-size: 1rem;
   margin-bottom: 10px;
 }
+.p-card-destination{
+  font-size: 20px;
+  
+}
+.strong-card-destination{
+  text-align: left;
+}
 
 .view-more-a {
-  background-color: #fca311;
+  background-color: #3b87d9;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+  
   font-weight: bold;
 }
 
 .view-more-a:hover {
-  background-color: #ffba08;
+  background-color: #097df9;
 }
 
 /* Adjust margin between slides */

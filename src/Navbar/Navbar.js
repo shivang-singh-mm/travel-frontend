@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css';
 import axios from 'axios';
+import { color } from 'framer-motion';
 
 function BasicExample() {
   const [expanded, setExpanded] = useState(false); // Navbar toggle state
@@ -38,26 +39,36 @@ function BasicExample() {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" className="nav-link" onClick={() => setExpanded(false)}>HOME</Nav.Link>
-            <Nav.Link as={Link} to="/aboutus" className="nav-link" onClick={() => setExpanded(false)}>ABOUT US</Nav.Link>
-            <Nav.Link as={Link} to="/blogs" className="nav-link" onClick={() => setExpanded(false)}>BLOGS</Nav.Link>
-            <NavDropdown title="Packages" id="basic-nav-dropdown" className="dropdown-hover">
-              {packages.length === 0 ? (
-                <NavDropdown.Item disabled>Loading...</NavDropdown.Item>
-              ) : (
-                packages.map(data => (
-                  <NavDropdown.Item
-                    key={data.id}
-                    as={Link}
-                    to={`/city?id=${data.id}`}
-                    onClick={() => setExpanded(false)}
-                  >
-                    {data.city}
-                  </NavDropdown.Item>
-                ))
-              )}
-            </NavDropdown>
-            <Nav.Link as={Link} to="/contactus" className="nav-link" onClick={() => setExpanded(false)}>CONTACT US</Nav.Link>
+            <Nav.Link as={Link} to="/" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>HOME</Nav.Link>
+            <Nav.Link as={Link} to="/aboutus" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>ABOUT US</Nav.Link>
+            <Nav.Link as={Link} to="/blogs" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>BLOGS</Nav.Link>
+            <NavDropdown
+  title="Packages"
+  id="basic-nav-dropdown"
+  className="dropdown-hover"
+  style={{ color: 'white' }}
+>
+  {packages.length === 0 ? (
+    <NavDropdown.Item style={{ color: 'white' }} disabled>
+      Loading...
+    </NavDropdown.Item>
+  ) : (
+    packages.map((data) => (
+      <NavDropdown.Item
+        key={data.id}
+        as={Link}
+        to={`/city?id=${data.id}`}
+        style={{ color: 'white' }}
+        onClick={() => setExpanded(false)}
+      >
+        {data.city}
+      </NavDropdown.Item>
+    ))
+  )}
+</NavDropdown>
+
+            <Nav.Link as={Link} to="/offers" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>OFFERS</Nav.Link>
+            <Nav.Link as={Link} to="/contactus" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>CONTACT US</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

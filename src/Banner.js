@@ -27,8 +27,7 @@ const Banner = () => {
       }}
     >
       <div className="banner-content">
-        <h1 className="banner-text">Explore. Dream. Discover.</h1>
-        
+        <h6>Discover the most sought-after travel spots loved by thousands of explorers! From peaceful hill retreats and exotic beaches to buzzing cityscapes and cultural heritage hubs </h6>
         <p className="banner-subtext">Unforgettable Journeys Await</p>
         <Link to='/booking'>
         <button className="banner-btn">Plan Your Next Adventure</button></Link>

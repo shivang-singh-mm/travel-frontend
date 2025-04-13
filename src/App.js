@@ -20,6 +20,10 @@ import CityTour from './pages/CityTour.js';
 import PrivateRoute from './pages/PrivateRoute.js';
 import Login from './pages/Login.js';
 import PostOffer from './pages/OfferForm.js';
+import CardCarousel from './CardCarousel/CardCarousel.js';
+// import HolidayOffers from './HolidayOffers/HolidayOffers.js';
+ 
+ 
 
 function App() {
   return (
@@ -30,9 +34,11 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/blogs" element={<Blog />} />
+        {/* <Route path="/offers" element={<HolidayOffers />} /> */}
         <Route path="/blogsinside" element={<BlogInside />} />
         <Route path="/PostDestination" element={<PostDestination />} />
-
+         
+       
 
         {/* <Route path="/himachal" element={<HimachalTour />} /> */}
         <Route path="/city" element={<CityTour />} />
@@ -44,6 +50,7 @@ function App() {
          <Route path="/goa" element={<GoaTour />} /> */}
 
         <Route path="/booking" element={<Book />} />
+        <Route path="/cardcarosal" element={<CardCarousel />} />
 
         <Route path="/golden-triangle" element={<GoldenTriangle />} />
         <Route path="/same-day" element={<SameDayTour />} />
@@ -56,10 +63,9 @@ function App() {
         <Route path="/dashboard/review" element={<PrivateRoute><PostReview /></PrivateRoute>} />
         <Route path="/dashboard/blog" element={<PrivateRoute><PostBlog /></PrivateRoute>} />
         <Route path="/dashboard/offer" element={<PrivateRoute><PostOffer /></PrivateRoute>} />
-
-
+        
+        
       </Routes>
-
       <Footer />
     </>
   );

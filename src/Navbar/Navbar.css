@@ -1,6 +1,8 @@
 .custom-navbar {
-  background: linear-gradient(90deg, #0285c7f9, #cfeffdc6);
+  background-color: #3977ac;
+  /* background: linear-gradient(90deg, #0285c7f9, #cfeffdc6); */
   padding: 15px 0;
+  color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -11,15 +13,18 @@
 }
 
 .nav-link {
-  color: #333;
+  /* color: #333; */
   margin: 0 15px;
   font-weight: 600;
   background-color: #1c89ea;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: white;
   transition: color 0.3s ease-in-out;
 }
-
+#basic-navbar-nav{
+  color: white;
+}
 .nav-link:hover {
   color: #034b8b;
 }
@@ -62,7 +67,7 @@
   color: #ddd;
 }
 
-.sidebar {
+/* .sidebar {
   position: fixed;
   top: 0;
   right: -250px;
@@ -74,8 +79,8 @@
   padding: 20px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1001;
-}
-
+} */
+/* 
 .sidebar.open {
   right: 0;
 }
@@ -106,7 +111,7 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   padding: 5px;
-}
+} */
 
 .close-btn {
   position: absolute;
@@ -129,7 +134,7 @@
   z-index: 1000;
 }
 
-.dashboard-icon {
+/* .dashboard-icon {
   color: #fff;
   display: flex;
   align-items: center;
@@ -139,4 +144,4 @@
 
 .dashboard-icon:hover {
   color: #ffc107;
-}
+} */

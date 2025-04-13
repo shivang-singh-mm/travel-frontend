@@ -50,6 +50,7 @@ const CardSlider = () => {
   return (
     <div className="slider-container-a">
       <h1 className="title-a" style={{ color: "#005aa7" }}>Our Popular Packages</h1>
+      <p className="text-justify">Our popular travel packages are thoughtfully curated to bring you the most exciting, relaxing, and culturally rich experiences across the globe.Each package is designed to include top-rated accommodations, seamless transfers, guided tours, and must-visit attractions </p>
       <Slider {...settings}>
         {cardsData.map((card) => (
           <div key={card.id} className="card-a">
@@ -57,10 +58,11 @@ const CardSlider = () => {
               <img src={card?.cover_url ? card?.cover_url[0] : card?.cover_url} alt={card.city} />
             </div>
             <div className="card-content-a">
-              <h3>{card.city}</h3>
-              <p><FaCar /> Car Rentals</p>
-              <p><FaHotel /> Hotel Facilities</p>
-              <p><FaUtensils /> Food Availability</p>
+              <h3><strong>{card.city}</strong></h3>
+              <p className="p-card-destination">
+                <strong className="stro-dest">Destinations covered:</strong> taj mahal, Meherangarh, Sangam </p>
+              <p><FaCar /> Car   <FaHotel /> Hotel <FaUtensils /> Food </p>
+               <p>4 Days/5 Nights</p>
               <Link to={`/city?id=${card.id}`}><button className="view-more-a">View More</button></Link>
             </div>
           </div>
