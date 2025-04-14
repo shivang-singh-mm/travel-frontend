@@ -1,0 +1,73 @@
+.tour-background-ra {
+    background-image: url(https://www.rajasthanbhumitours.com/images/banner/rajasthan-bhumi-tour.jpg);
+    background-size: cover;
+    color: white;
+    height: 100px;
+  }
+  .cities-wrapper{
+    margin-top: 50px;
+  }
+  .discount-label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    width: 100px;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .on-request-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    z-index: 1;
+  }
+  
+  .feature-box {
+    flex: 1;
+    text-align: center;
+    padding: 6px;
+    font-size: 14px;
+    border-right: 1px solid #ccc;
+    min-width: 120px;
+  }
+  
+  .feature-box:last-child {
+    border-right: none;
+  }
+  
+  .duration {
+    font-weight: bold;
+    color: #004080;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-box {
+      flex: 1 1 50%;
+      border-right: none;
+      margin-bottom: 10px;
+    }
+  
+    .on-request-btn {
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+  
+    .discount-label {
+      font-size: 12px;
+      width: 80px;
+    }
+  }
+  

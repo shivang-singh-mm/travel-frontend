@@ -1,0 +1,63 @@
+.whywe-container {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: white;
+    color: #333;
+  }
+  
+  .whywe-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlight {
+    color:cornflowerblue; /* Orange */
+  }
+  
+  .whywe-divider {
+    width: 80px;
+    height: 4px;
+    background-color:cornflowerblue;
+    margin: 0 auto 2.5rem auto;
+    border-radius: 9999px;
+  }
+  
+  .whywe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 2rem;
+    text-align: left;
+  }
+  
+  @media (max-width: 768px) {
+    .whywe-grid {
+      grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+    }
+  }
+  
+  .whywe-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    min-height: 130px; /* makes all boxes equal height */
+  }
+  
+  .whywe-icon {
+    color:cornflowerblue;
+    font-size: 2rem;
+    min-width: 2.5rem;
+  }
+  
+  .whywe-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .whywe-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  

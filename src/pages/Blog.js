@@ -55,7 +55,7 @@ function Blog() {
     <div className="container mt-5">
       <h2 className="tittle-z text-center mb-4">Travel Blog</h2>
       {/* {sections.map((section) => ( */}
-      <div key={3} className="mb-5 p-4" style={{ backgroundColor: "#fff3cd", borderRadius: "10px" }}>
+      <div key={3} className="mb-5 p-4" style={{ backgroundColor: "whitesmoke", borderRadius: "10px" }}>
         <h3 className="text-center mb-3">Latest Blog Posts</h3>
         <div className="row">
 

@@ -17,14 +17,14 @@ import PopularDestination2 from './pages/PopularDestinationForm2.js';
 import PostReview from './pages/UserReviewForm.js';
 import PostBlog from './pages/BlogForm.js';
 import CityTour from './pages/CityTour.js';
+import Cities from './pages/Cities.js';
 import PrivateRoute from './pages/PrivateRoute.js';
 import Login from './pages/Login.js';
 import PostOffer from './pages/OfferForm.js';
 import CardCarousel from './CardCarousel/CardCarousel.js';
-// import HolidayOffers from './HolidayOffers/HolidayOffers.js';
+import HolidayOffers from './HolidayOffers/HolidayOffers.js';
+import WhyWe from './WhyWe/WhyWe.js';
  
- 
-
 function App() {
   return (
     <>
@@ -34,14 +34,18 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/blogs" element={<Blog />} />
-        {/* <Route path="/offers" element={<HolidayOffers />} /> */}
+        <Route path="/whywe" element={<WhyWe />} />
+        <Route path="/offers" element={<HolidayOffers />} />
         <Route path="/blogsinside" element={<BlogInside />} />
         <Route path="/PostDestination" element={<PostDestination />} />
          
        
-
+       
         {/* <Route path="/himachal" element={<HimachalTour />} /> */}
-        <Route path="/city" element={<CityTour />} />
+        <Route path="/city" element={<CityTour />} /> 
+        <Route path="/cities" element={<Cities />} /> 
+
+
         {/* <Route path="/kashmir" element={<KashmirTour />} />
         <Route path="/rajasthan" element={<RajasthanTour />} />
         <Route path="/ladakh" element={<LadakhTour />} />

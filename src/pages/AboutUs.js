@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./AboutUs.css";
 import HolidayOffers from "../HolidayOffers/HolidayOffers";
+import WhyWe from "../WhyWe/WhyWe";
  
  
 
@@ -111,7 +112,7 @@ Discover seamless travel experiences with Angel Destination, offering 600+ all-i
 </Container>
       <div className="holidays-sections">
       <HolidayOffers/></div>
-    
+       <WhyWe/>
     </div>
   );
 };

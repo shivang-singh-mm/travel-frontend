@@ -8,6 +8,7 @@ import TestimonialSlider from "../Testing/Testing";
 import HolidayOffers from "../HolidayOffers/HolidayOffers.js";
 import Advanture from "../Adventure/Advanture.js";
  import CardCarousel from "../CardCarousel/CardCarousel.js";
+ import WhyWe from "../WhyWe/WhyWe.js";
 import '../pages/Home.css'
 // import { FaCheckCircle } from 'react-icons/fa';
 import Banner from "../Banner";
@@ -80,6 +81,7 @@ const Home = () => {
         <div className="testimonial-container-a">
 
           <TestimonialSlider />
+         
           
         </div>
       </div>
@@ -95,6 +97,7 @@ const Home = () => {
           </div>
         </section>
       </div> */}
+        <WhyWe/>
       <div className="holidays-sections">
       <HolidayOffers/>
       </div> 
