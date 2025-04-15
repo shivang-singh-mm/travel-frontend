@@ -39,9 +39,12 @@
 .about-saumya{
   text-align: justify;
 }
-
+.about-xyz{
+  background-color: whitesmoke;
+}
 .about-section {
   padding: 60px 20px;
+  
   text-align: center;
 }
 
@@ -69,19 +72,20 @@
 }
 
 
-.feature-box {
+.feature-box-xyz {
   margin-top: 30px;
 }
 
-.feature-card img {
+.feature-card-xyz img {
   border-bottom: 4px solid #005aa7;
 
 }
 
-.feature-card {
+.feature-card-xyz {
   text-align: center;
   background: rgba(255, 253, 228, 0.9);
   border-radius: 10px;
+  margin-bottom: 10px;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
 }

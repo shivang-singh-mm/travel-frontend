@@ -53,18 +53,20 @@ Discover seamless travel experiences with Angel Destination, offering 600+ all-i
       </Container>
 
       {/* Why Choose Us Section */}
+
+      <div className="about-xyz">
       <Container className="about-section">
         <h2 className="section-title text-center">Why Choose Us?</h2>
         <p>At Angel Destination, we believe that travel is more than just a journey—it's about creating unforgettable memories. Here's why thousands of travelers trust us:</p>
         <Row>
           {features.map((feature, index) => (
-            <Col md={4} key={index} className="feature-box">
+            <Col md={4} key={index} className="feature-box-xyz">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                <Card className="feature-card">
-                  <Card.Img variant="top" src={feature.image} className="feature-img" />
+                <Card className="feature-card-xyz">
+                  <Card.Img variant="top" src={feature.image} className="feature-img-xyz" />
                   <Card.Body>
                     <Card.Title>{feature.title}</Card.Title>
                     <Card.Text>{feature.description}</Card.Text>
@@ -74,7 +76,7 @@ Discover seamless travel experiences with Angel Destination, offering 600+ all-i
             </Col>
           ))}
         </Row>
-      </Container>
+      </Container></div>
 
       {/* Meet Our Team Section */}
       <Container className="team-section">

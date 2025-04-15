@@ -17,6 +17,7 @@ import PopularDestination2 from './pages/PopularDestinationForm2.js';
 import PostReview from './pages/UserReviewForm.js';
 import PostBlog from './pages/BlogForm.js';
 import CityTour from './pages/CityTour.js';
+import Perticular from './pages/Perticular.js';
 import Cities from './pages/Cities.js';
 import PrivateRoute from './pages/PrivateRoute.js';
 import Login from './pages/Login.js';
@@ -42,8 +43,9 @@ function App() {
        
        
         {/* <Route path="/himachal" element={<HimachalTour />} /> */}
-        <Route path="/city" element={<CityTour />} /> 
-        <Route path="/cities" element={<Cities />} /> 
+        <Route path="/CititesTour" element={<CityTour/>} /> 
+        <Route path="/cities" element={<Perticular/>} /> 
+        <Route path="/city" element={<Cities />} /> 
 
 
         {/* <Route path="/kashmir" element={<KashmirTour />} />

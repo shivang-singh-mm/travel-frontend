@@ -1,0 +1,108 @@
+.perticular-background {
+    background-image: url('https://imagedelivery.net/y9EHf1toWJTBqJVsQzJU4g/www.indianholiday.com/2024/09/Rajasthan-Tourism-2.png/w=870,h=380');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  .perticular-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .perticular-background h3 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  .section-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+  }
+  
+  .package-box {
+    background-color: #fff8f0;
+    border-left: 5px solid #f78b3f;
+  }
+  
+  .tip-box {
+    background-color: #f3f4f6;
+    border-left: 5px solid #ffb703;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+  }
+
+  .itinerary-container {
+    background: whitesmoke;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .itinerary-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .itinerary-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+ 
+  .card-image-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .itinerary-header {
+    background-color:#3977ac;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .itinerary-header.open {
+    background-color: #3977ac;
+  }
+  
+  .toggle-icon {
+    font-size: 1.2rem;
+    color: black;
+  }
+  
+  .itinerary-content {
+    background-color: #f9f9f9;
+    padding: 1rem;
+  }
+  
+  

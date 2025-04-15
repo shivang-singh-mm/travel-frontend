@@ -7,10 +7,7 @@ import "./TourPage.css";
 import axios from "axios";
 import CitySlider from "./CitySlider";
 
-
-// const commonImage =
-//   "https://www.holidify.com/images/bgImages/RAJASTHAN.jpg"; // Common image for all cards
-
+ 
 const CityTour = () => {
   const [city, setCity] = useState('');
 
@@ -20,7 +17,6 @@ const CityTour = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const id = searchParams.get("id");
-
   async function fetchCity() {
     const fetchCityRes = await axios.get(`${baseurl}/api/tour/${id}`);
     console.log(fetchCityRes.data)
@@ -50,9 +46,6 @@ const CityTour = () => {
           className="tour-image"
         /> */}
               <CitySlider images={city?.cover_url} />
-
-
-
             </motion.div>
 
             <div className="destinations_covered"> <h2 className="tittle-a"> Destinations Covered</h2>

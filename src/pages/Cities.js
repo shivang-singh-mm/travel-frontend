@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 import "./Cities.css";
 
 const tourPackages = [
@@ -34,7 +35,9 @@ function Cities() {
       </div>
 
       <div className="container my-4">
-        <h3 className="mb-3">Plan Your Rajasthan Tour With Our Experienced Trip Advisors</h3>
+        <h3 className="mb-3">
+          Plan Your Rajasthan Tour With Our Experienced Trip Advisors
+        </h3>
         <p className="text-justify">
           Architectural wonders, exquisite handicrafts, colourful culture, and
           tempting cuisine are a few of the many highlights of this magnificent
@@ -57,47 +60,50 @@ function Cities() {
         <div className="row">
           {tourPackages.map((pkg) => (
             <div className="col-12 mb-4" key={pkg.id}>
-              <div className="card shadow">
-                <div className="row g-0 flex-column flex-md-row">
-                  {/* Image */}
-                  <div className="col-12 col-md-4 position-relative">
-                    <img
-                      src={pkg.image}
-                      className="card-img-top"
-                      alt={pkg.title}
-                      style={{ height: "100%", objectFit: "cover" }}
-                    />
-                    <div className="discount-label">{pkg.discount} OFF</div>
-                    <button className="on-request-btn">₹ On Request</button>
-                  </div>
+              {/* Make the whole card clickable */}
+              <Link to="/cities" className="text-decoration-none text-dark">
+                <div className="card shadow">
+                  <div className="row g-0 flex-column flex-md-row">
+                    {/* Image */}
+                    <div className="col-12 col-md-4 position-relative">
+                      <img
+                        src={pkg.image}
+                        className="card-img-top"
+                        alt={pkg.title}
+                        style={{ height: "100%", objectFit: "cover" }}
+                      />
+                      <div className="discount-label">{pkg.discount} OFF</div>
+                      <button className="on-request-btn">₹ On Request</button>
+                    </div>
 
-                  {/* Content */}
-                  <div className="col-12 col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title text-primary">{pkg.title}</h5>
-                      <p className="text-muted">
-                        <strong>📍 Places Covered</strong>
-                        <br />
-                        {pkg.places}
-                      </p>
-                      <div className="d-flex justify-content-between my-3 flex-wrap">
-                        <div className="feature-box">🏨 Accommodation</div>
-                        <div className="feature-box">🍽️ Food</div>
-                        <div className="feature-box">🚗 Car Rental</div>
-                        <div className="feature-box">🚴‍♂️ Sightseeing</div>
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
-                        <div className="duration">
-                          📞 {pkg.nights} Nights/{pkg.days} Days
+                    {/* Content */}
+                    <div className="col-12 col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title text-primary">{pkg.title}</h5>
+                        <p className="text-muted">
+                          <strong>📍 Places Covered</strong>
+                          <br />
+                          {pkg.places}
+                        </p>
+                        <div className="d-flex justify-content-between my-2 flex-wrap">
+                          <div className="feature-box">🏨 Accommodation</div>
+                          <div className="feature-box">🍽️ Food</div>
+                          <div className="feature-box">🚗 Car Rental</div>
+                          <div className="feature-box">🚴‍♂️ Sightseeing</div>
                         </div>
-                        <button className="btn btn-danger px-4">
-                          VIEW DETAILS
-                        </button>
+                        <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                          <div className="duration">
+                            📞 {pkg.nights} Nights/{pkg.days} Days
+                          </div>
+                          <button className="btn btn-danger px-4">
+                            VIEW DETAILS
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
