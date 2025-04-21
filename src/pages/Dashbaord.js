@@ -86,7 +86,7 @@ const Dashboard = () => {
 
       <section>
         <h3>Reviews</h3>
-        <Link to='/dashboard/review'>
+        <Link to='/dashboard/popular-destination'>
           <button className="add-btn2">Add review</button>
         </Link>
         <ul>
