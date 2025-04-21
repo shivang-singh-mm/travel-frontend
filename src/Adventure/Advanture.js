@@ -7,7 +7,7 @@ const AdventureFooterBanner = () => {
       <div className="overlay">
         <section className="footer-promo">
           <div className="container-a text-center">
-            <h2 className="tittle-a">Your Next Adventure Awaits! ✈️</h2>
+            <h2 className="">Your Next Adventure Awaits! ✈️</h2>
             <p className="  ">
               Discover breathtaking landscapes, dive into rich cultures, and craft memories that last a lifetime.
               From serene beach retreats to adrenaline-filled mountain treks — your journey starts here.

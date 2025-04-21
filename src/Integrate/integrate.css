@@ -1,0 +1,70 @@
+/* .integrate-title{
+  margin-top: 50px;
+}
+Form{
+    margin-left: 90px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+       
+    }
+    .Border{
+     border: 3px solid;
+     width: 350px;
+     height:650px;
+     margin-left: 20px;
+     margin-top: 70px;
+     margin-bottom: 10px;
+     margin-left: 40px;
+     border-radius: 30px;
+     
+    }
+   
+    .custom-shadow {
+        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.25),
+                    -4px -4px 15px rgba(255, 255, 255, 0.2);
+        background-color: #f8f9fa; 
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .h1{
+        
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     padding-bottom: 20px;
+    
+      }
+      .spin {
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    
+    .btn{
+      width:100%;
+    
+    }
+    .transition {
+      transition: transform 0.3s ease;
+    }
+    
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+    
+    .collapsible-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: scaleY(0.95);
+      transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .collapsible-wrapper.open {
+      max-height: 1000px;  
+      opacity: 1;
+      transform: scaleY(1);
+    } */

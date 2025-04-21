@@ -229,7 +229,7 @@ function TestimonialSlider() {
 
   return (
     <div className="testimonial-section container">
-      <h1 className="tittle-a text-center">Our Happy Travellers</h1>
+      <h1 className="tittle-a text-center mt -3">Our Happy Travellers</h1>
       <p className="text-center">
         Our biggest reward is the smiles of our travelers. From breathtaking landscapes to unforgettable memories,
         read how real people turned their dream vacations into reality with us.

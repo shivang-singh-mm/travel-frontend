@@ -45,7 +45,7 @@ const Dashboard = () => {
         Admin Dashboard
         <div className="view-enquiry-container">
           <Link to='/dashboard/enquiry'>
-            <button className="view-enquiry-btn">View Enquiry</button>
+            <button className="view-enquiry-xyz">View Enquiry</button>
           </Link>
         </div>
       </h2>
@@ -69,7 +69,7 @@ const Dashboard = () => {
 
       <section>
         <h3>Tour Packages</h3>
-        <Link to='/dashboard/tour-package'>
+        <Link to='/integrate'>
           <button className="add-btn2">Add Tour Package</button>
         </Link>
         <ul>

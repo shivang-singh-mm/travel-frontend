@@ -5,7 +5,11 @@ css file .dashboard-container2 {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
-
+.view-enquiry-xyz{
+  background-color: #007bff;
+  border-radius: 10px;
+   font-size:medium;
+}
 h2,
 h3 {
   text-align: center;

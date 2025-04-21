@@ -25,6 +25,7 @@ import PostOffer from './pages/OfferForm.js';
 import CardCarousel from './CardCarousel/CardCarousel.js';
 import HolidayOffers from './HolidayOffers/HolidayOffers.js';
 import WhyWe from './WhyWe/WhyWe.js';
+import Integrate from './Integrate/Integrate.js';
  
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/whywe" element={<WhyWe />} />
+        <Route path="/integrate" element={<Integrate/>} />
         <Route path="/offers" element={<HolidayOffers />} />
         <Route path="/blogsinside" element={<BlogInside />} />
         <Route path="/PostDestination" element={<PostDestination />} />

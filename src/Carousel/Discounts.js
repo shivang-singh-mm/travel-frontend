@@ -3,9 +3,7 @@ import DiscountCarousel from './DiscountCarousel.js';
 import axios from 'axios';
 
 function Discounts() {
-
   const [offer, setOffer] = useState([]);
-
   const baseurl = process.env.REACT_APP_API_URL;
 
   async function fetchOffers() {
@@ -15,13 +13,11 @@ function Discounts() {
 
   useEffect(() => {
     fetchOffers();
-  }, [])
-
-
+  }, []);
 
   return (
     <>
-      {offer.length === 0 ? <></> :
+      {offer.length === 0 ? null : (
         <div
           className="discount"
           style={{
@@ -29,15 +25,20 @@ function Discounts() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            minHeight: '500px',
+            minHeight: '450px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
             color: 'white',
-            padding: '40px 5%',
+            padding: '40px',
             position: 'relative',
+
+            // Fixed layout styles
+            margin: '0',
+            width: '100vw',
+            overflowX: 'hidden',
           }}
         >
           {/* Overlay for better readability */}
@@ -61,23 +62,37 @@ function Discounts() {
               position: 'absolute',
               top: '20px',
               width: '100%',
+              margin: 0,
+              zIndex: 1,
             }}
           >
             {offer[0].title}
           </h2>
-          <div style={{
-            marginTop: '20px'
-          }}>
+
+          {/* Description */}
+          <div style={{ marginTop: '20px', zIndex: 1 }}>
             <p>{offer[0].description}</p>
           </div>
 
           {/* Carousel Section */}
-          <div className="discount_corousal" style={{ position: 'relative', width: '100%', }}>
-            <DiscountCarousel url1={offer[0].url1} url2={offer[0].url2} url3={offer[0].url3} description1={offer[0].description1} description2={offer[0].description2} description3={offer[0].description3} title1={offer[0].title1} title2={offer[0].title2} title3={offer[0].title3} />
+          <div
+            className="discount_corousal"
+            style={{ position: 'relative', width: '100%', zIndex: 1 }}
+          >
+            <DiscountCarousel
+              url1={offer[0].url1}
+              url2={offer[0].url2}
+              url3={offer[0].url3}
+              description1={offer[0].description1}
+              description2={offer[0].description2}
+              description3={offer[0].description3}
+              title1={offer[0].title1}
+              title2={offer[0].title2}
+              title3={offer[0].title3}
+            />
           </div>
         </div>
-      }
-
+      )}
     </>
   );
 }
