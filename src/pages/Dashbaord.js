@@ -41,14 +41,14 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container2">
-      <h2 className="tittle-tour">
-        Admin Dashboard
-        <div className="view-enquiry-container">
-          <Link to='/dashboard/enquiry'>
-            <button className="view-enquiry-xyz">View Enquiry</button>
-          </Link>
-        </div>
-      </h2>
+     <h2 className="text-center my-4 position-relative">
+  Admin Dashboard
+  <div className="position-absolute end-0 top-50 translate-middle-y me-3">
+    <Link to='/dashboard/enquiry'>
+      <button className="btn btn-outline-primary btn-sm">View Enquiry</button>
+    </Link>
+  </div>
+</h2>
 
       <section>
         <h3>Popular Destinations</h3>
@@ -86,7 +86,7 @@ const Dashboard = () => {
 
       <section>
         <h3>Reviews</h3>
-        <Link to='/dashboard/popular-destination'>
+        <Link to='/dashboard/review'>
           <button className="add-btn2">Add review</button>
         </Link>
         <ul>

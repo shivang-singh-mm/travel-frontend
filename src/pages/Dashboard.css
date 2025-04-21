@@ -1,9 +1,18 @@
-css file .dashboard-container2 {
+css file
+.dashboard-container2 {
   background-color: #f8f9fa;
   color: #212529;
   min-height: 100vh;
   padding: 20px;
+
   font-family: Arial, sans-serif;
+}
+.dashboard-container2{
+  margin-top: 70px;
+}
+.tittle-tour{
+  text-align: center;
+  
 }
 .view-enquiry-xyz{
   background-color: #007bff;
