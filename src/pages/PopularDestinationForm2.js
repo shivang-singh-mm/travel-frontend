@@ -15,7 +15,6 @@ function PopularDestinationForm2() {
   async function fecthEnquiry() {
     const fetchEnquiryRes = await axios.get(`${baseurl}/api/enquiry/`);
     setData(fetchEnquiryRes.data)
-    console.log(fetchEnquiryRes)
   }
 
   useEffect(() => {
@@ -65,7 +64,8 @@ function PopularDestinationForm2() {
               <div className="info-card">
                 {/* <h4>Travel Details</h4> */}
                 <p><strong>Destination:</strong> {selectedUser.destination}</p>
-                <p><strong>No. of Persons:</strong> {selectedUser.number_of_persons}</p>
+                <p><strong>No. of Adults:</strong> {selectedUser.adults}</p>
+                <p><strong>No. of Childs:</strong> {selectedUser.childs}</p>
               </div>
             </div>
 

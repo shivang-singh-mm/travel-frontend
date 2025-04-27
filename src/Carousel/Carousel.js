@@ -53,17 +53,17 @@ const CardSlider = () => {
       <p className="text-justify">Our popular travel packages are thoughtfully curated to bring you the most exciting, relaxing, and culturally rich experiences across the globe.Each package is designed to include top-rated accommodations, seamless transfers, guided tours, and must-visit attractions </p>
       <Slider {...settings}>
         {cardsData.map((card) => (
-          <div key={card.id} className="card-a">
+          <div key={card._id} className="card-a">
             <div className="card-image-a">
-              <img src={card?.cover_url ? card?.cover_url[0] : card?.cover_url} alt={card.city} />
+              <img src={card?.image1} alt={card.title1} />
             </div>
             <div className="card-content-a">
-              <h3><strong>{card.city}</strong></h3>
+              <h3><strong>{card.title1}</strong></h3>
               <p className="p-card-destination">
-                <strong className="stro-dest">Destinations covered:</strong> taj mahal, Meherangarh, Sangam </p>
+                <strong className="stro-dest">Destinations covered:</strong> {card.placesCovered}</p>
               <p><FaCar /> Car   <FaHotel /> Hotel <FaUtensils /> Food </p>
-               <p>4 Days/5 Nights</p>
-              <Link to={`/city?id=${card.id}`}><button className="view-more-a">View More</button></Link>
+              <p>{card.form4Items[0]?.input1}</p>
+              <Link to={`/package/${card.title1}/${card._id}`}><button className="view-more-a">View More</button></Link>
             </div>
           </div>
         ))}

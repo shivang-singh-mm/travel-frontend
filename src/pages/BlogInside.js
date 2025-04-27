@@ -24,7 +24,6 @@ function BlogInside() {
 
   async function fetchBlogs() {
     const fetchBlogsRes = await axios.get(`${baseurl}/api/blog/${id}`);
-    console.log(fetchBlogsRes.data)
     setBlogs(fetchBlogsRes.data);
   }
 
@@ -40,7 +39,15 @@ function BlogInside() {
         <div key={blog.id} className="tittle-z blog-section">
           <h2>{blog.title}</h2>
           <img src={blog.url} alt={blog.title} className="blog-image" />
-          <p>{blog.description}</p>
+          {/* <p>{blog.description}</p> */}
+          <p>
+            {blog.description?.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </p>
         </div>
         {/* ))} */}
       </div>

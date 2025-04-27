@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 import './Footer.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const [packages, setPackages] = useState([]);
@@ -18,7 +19,7 @@ function Footer() {
   useEffect(() => {
     async function fetchPackages() {
       try {
-        const response = await axios.get(`${baseurl}/api/tour`);
+        const response = await axios.get(`${baseurl}/api/theme`);
         setPackages(response.data);
       } catch (error) {
         console.error("Error fetching packages:", error);
@@ -38,10 +39,12 @@ function Footer() {
         </div>
 
         <div className='footer-section'>
-          <h3 className="footer-title">Popular Destinations</h3>
+          <h3 className="footer-title">Themes</h3>
           <ul className='footer-destination-list'>
             {packages.slice(0, 5).map((item) => (
-              <li key={item._id}>{item.destination}</li>
+              <Link to={`/theme/${item.title}/${item._id}`}>
+                <li key={item._id}>📍 {item.title}</li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -61,7 +64,7 @@ function Footer() {
           </p>
 
           <div className="social-links">
-          <a href="https://wa.me/919773980709" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/919773980709" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp size={25} color="#25D366" />
             </a>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
@@ -73,7 +76,7 @@ function Footer() {
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
               <FaTwitter size={25} color='#1DA1F2' />
             </a>
-            
+
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./DiscountCarousel.css";
 import { FaCar, FaHotel, FaUtensils } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const DiscountCarousel = ({ url1, url2, url3, description1, description2, description3, title1, title2, title3 }) => {
 
@@ -57,15 +58,18 @@ const DiscountCarousel = ({ url1, url2, url3, description1, description2, descri
             minHeight: "350px",
             overflow: "hidden",
           }}>
-            {/* Card Image */}
-            <img src={card.img} alt={card.title} style={{ width: "100%", height: "180px", objectFit: "cover" }} />
+            <Link to={`/booking`}
+              style={{ textDecoration: 'none' }} >
+              {/* Card Image */}
+              <img src={card.img} alt={card.title} style={{ width: "100%", height: "180px", objectFit: "cover" }} />
 
-            {/* Card Content */}
-            <div style={{ padding: "15px" }}>
-              <div>{card.icon}</div>
-              <h3 style={{ color: "#005aa7", marginTop: "10px", fontSize: "18px" }}>{card.title}</h3>
-              <p style={{ color: "#333", fontSize: "14px", lineHeight: "1.4" }}>{card.desc}</p>
-            </div>
+              {/* Card Content */}
+              <div style={{ padding: "15px" }}>
+                <div>{card.icon}</div>
+                <h3 style={{ color: "#005aa7", marginTop: "10px", fontSize: "18px" }}>{card.title}</h3>
+                <p style={{ color: "#333", fontSize: "14px", lineHeight: "1.4" }}>{card.desc}</p>
+              </div>
+            </Link>
           </div>
         ))}
       </Slider>

@@ -7,12 +7,12 @@ import Gallery from "../Gallery";
 import TestimonialSlider from "../Testing/Testing";
 import HolidayOffers from "../HolidayOffers/HolidayOffers.js";
 import Advanture from "../Adventure/Advanture.js";
- import CardCarousel from "../CardCarousel/CardCarousel.js";
- import WhyWe from "../WhyWe/WhyWe.js";
+import CardCarousel from "../CardCarousel/CardCarousel.js";
+import WhyWe from "../WhyWe/WhyWe.js";
 import '../pages/Home.css'
- 
+
 import Banner from "../Banner";
- 
+
 const Home = () => {
   const formRef = useRef(null);
 
@@ -25,7 +25,7 @@ const Home = () => {
       <div className="background-image">
         <img
           // src="https://www.nationalunlock.com/wp-content/uploads/2023/07/travel-agency.jpg"
-          src="https://www.tripplannersindia.com/assets/blog/images/placestovisitinmanaliinjanuary/Manali.webp"
+          src="https://wallpapercave.com/wp/wp10611290.jpg"
           alt="Travel Agency"
         />
         <div className="overlay">
@@ -39,23 +39,23 @@ const Home = () => {
       <div ref={formRef} style={{ backgroundColor: "#029feef9" }}>
         <BookingForm />
       </div>
-       
-      <Discounts/>
+
+      <Discounts />
       <Carousel />
       <Banner />
       <div className="Gallery-section">
-      <Gallery /></div>    
-     <CardCarousel/>
-  <div className="footer-banner-a-a">
+        <Gallery /></div>
+      <CardCarousel />
+      <div className="footer-banner-a-a">
         <div className="testimonial-container-a">
           <TestimonialSlider />
         </div>
       </div>
-        <WhyWe/>
+      <WhyWe />
       <div className="holidays-sections">
-      <HolidayOffers/>
-      </div> 
-         <Advanture/>
+        <HolidayOffers />
+      </div>
+      <Advanture />
     </div>
   );
 };

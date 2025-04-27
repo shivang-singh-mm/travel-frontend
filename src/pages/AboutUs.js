@@ -4,17 +4,19 @@ import { motion } from "framer-motion";
 import "./AboutUs.css";
 import HolidayOffers from "../HolidayOffers/HolidayOffers";
 import WhyWe from "../WhyWe/WhyWe";
- 
- 
+
+
 
 const images = ["/aboutus.jpg"];
 const images2 = ["/aboutus2.jpg"];
 const AboutUs = () => {
+
+
   return (
     <div className="hero_section">
       {/* Hero Section */}
       <div className="about-hero">
-        <motion.div 
+        <motion.div
           className="about-overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -29,10 +31,10 @@ const AboutUs = () => {
       <Container className="about-section">
         <Row className="align-items-center">
           <Col md={6}>
-          {images.map((img, index) => (
-  <img key={index} src={img} alt={`Folder ${index}`} width={400}className="about-image" />
-))}
-            
+            {images.map((img, index) => (
+              <img key={index} src={img} alt={`Folder ${index}`} width={400} className="about-image" />
+            ))}
+
           </Col>
           <Col md={6}>
             <motion.h2
@@ -44,9 +46,9 @@ const AboutUs = () => {
               Our Story
             </motion.h2>
             <p className="about-text">
-           <strong>Explore India with the Best Travel Services:</strong> <br></br>
+              <strong>Explore India with the Best Travel Services:</strong> <br></br>
 
-Discover seamless travel experiences with Angel Destination, offering 600+ all-inclusive cars, 500+ premium hotels, and expert local tour guides tailored to each destination. Whether you're planning a luxury escape, an adventure tour, or a business trip, we ensure comfort, safety, and hassle-free bookings. Our handpicked guides provide deep insights, making every journey memorable. Experience personalized itineraries, 24/7 support, and unbeatable prices across India. Book with us and turn your travel dreams into reality!
+              Discover seamless travel experiences with Angel Destination, offering 600+ all-inclusive cars, 500+ premium hotels, and expert local tour guides tailored to each destination. Whether you're planning a luxury escape, an adventure tour, or a business trip, we ensure comfort, safety, and hassle-free bookings. Our handpicked guides provide deep insights, making every journey memorable. Experience personalized itineraries, 24/7 support, and unbeatable prices across India. Book with us and turn your travel dreams into reality!
             </p>
           </Col>
         </Row>
@@ -55,66 +57,66 @@ Discover seamless travel experiences with Angel Destination, offering 600+ all-i
       {/* Why Choose Us Section */}
 
       <div className="about-xyz">
-      <Container className="about-section">
-        <h2 className="section-title text-center">Why Choose Us?</h2>
-        <p>At Angel Destination, we believe that travel is more than just a journey—it's about creating unforgettable memories. Here's why thousands of travelers trust us:</p>
-        <Row>
-          {features.map((feature, index) => (
-            <Col md={4} key={index} className="feature-box-xyz">
+        <Container className="about-section">
+          <h2 className="section-title text-center">Why Choose Us?</h2>
+          <p>At Angel Destination, we believe that travel is more than just a journey—it's about creating unforgettable memories. Here's why thousands of travelers trust us:</p>
+          <Row>
+            {features.map((feature, index) => (
+              <Col md={4} key={index} className="feature-box-xyz">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                >
+                  <Card className="feature-card-xyz">
+                    <Card.Img variant="top" src={feature.image} className="feature-img-xyz" />
+                    <Card.Body>
+                      <Card.Title>{feature.title}</Card.Title>
+                      <Card.Text>{feature.description}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container></div>
+
+      {/* Meet Our Team Section */}
+      <Container className="team-section">
+        <h2 className="section-title text-center">Meet Our Travel Experts</h2>
+        <p>Our team of passionate travel experts is the heart of everything we do. With years of experience, insider knowledge, and a deep love for exploring the world, they’re here to craft the perfect trip just for you.</p>
+        <Row className="justify-content-center">
+          {teamMembers.map((member, index) => (
+            <Col md={6} sm={12} key={index}>
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 200 }}
+                className="team-card mb-4"
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                <Card className="feature-card-xyz">
-                  <Card.Img variant="top" src={feature.image} className="feature-img-xyz" />
-                  <Card.Body>
-                    <Card.Title>{feature.title}</Card.Title>
-                    <Card.Text>{feature.description}</Card.Text>
-                  </Card.Body>
+                <Card className="p-3">
+                  <Row className="align-items-center">
+                    <Col md={5} xs={12} className="text-center">
+                      <img
+                        src={images2[index % images2.length]}
+                        alt={`Member ${index}`}
+                        className="img-fluid rounded about-image"
+                      />
+                    </Col>
+                    <Col md={7} xs={12}>
+                      <Card.Body>
+                        <Card.Title>{member.name}</Card.Title>
+                        <Card.Text className="about-saumya">{member.role}</Card.Text>
+                      </Card.Body>
+                    </Col>
+                  </Row>
                 </Card>
               </motion.div>
             </Col>
           ))}
         </Row>
-      </Container></div>
-
-      {/* Meet Our Team Section */}
-      <Container className="team-section">
-  <h2 className="section-title text-center">Meet Our Travel Experts</h2>
-  <p>Our team of passionate travel experts is the heart of everything we do. With years of experience, insider knowledge, and a deep love for exploring the world, they’re here to craft the perfect trip just for you.</p>
-  <Row className="justify-content-center">
-    {teamMembers.map((member, index) => (
-      <Col md={6} sm={12} key={index}>
-        <motion.div
-          className="team-card mb-4"
-          whileHover={{ scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <Card className="p-3">
-            <Row className="align-items-center">
-              <Col md={5} xs={12} className="text-center">
-                <img
-                  src={images2[index % images2.length]}
-                  alt={`Member ${index}`}
-                  className="img-fluid rounded about-image"
-                />
-              </Col>
-              <Col md={7} xs={12}>
-                <Card.Body>
-                  <Card.Title>{member.name}</Card.Title>
-                  <Card.Text className="about-saumya">{member.role}</Card.Text>
-                </Card.Body>
-              </Col>
-            </Row>
-          </Card>
-        </motion.div>
-      </Col>
-    ))}
-  </Row>
-</Container>
+      </Container>
       <div className="holidays-sections">
-      <HolidayOffers/></div>
-       <WhyWe/>
+        <HolidayOffers /></div>
+      <WhyWe />
     </div>
   );
 };
@@ -152,8 +154,8 @@ const teamMembers = [
     image:
       "https://www.emeraldcruises.eu/-/media/project/scenic/emerald-cruises/travel-agent-hub/ours-sales-team/d_ecer-two_guests_with_cruise_director.jpg?rev=4ac6a19446404789bded0ad61fa64f98",
   },
-  
-  
+
+
 ];
 
 export default AboutUs;

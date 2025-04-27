@@ -1,3 +1,9 @@
+body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  overflow-x: hidden;
+}
+
 .background-section {
   background-image: url('https://t4.ftcdn.net/jpg/05/09/10/53/360_F_509105381_OZUe5JTIZSy2YXc3ifgacnW6xwpbCbzU.jpg');
   background-size: cover;
@@ -12,15 +18,19 @@
   align-items: center;
   justify-content: center;
 }
-.holidays-sections{
+
+.holidays-sections {
   background-color: whitesmoke;
 }
-.Gallery-section{
+
+.Gallery-section {
   background-color: whitesmoke;
 }
-.footer-banner-a-a{
+
+.footer-banner-a-a {
   background-color: whitesmoke;
 }
+
 .footer-banner-a {
   background-attachment: fixed;
   background-size: cover;

@@ -18,8 +18,9 @@ function BasicExample() {
   useEffect(() => {
     async function fetchPackages() {
       try {
-        const response = await axios.get(`${baseurl}/api/tour`);
+        const response = await axios.get(`${baseurl}/api/theme`);
         setPackages(response.data);
+        console.log(response.data)
       } catch (error) {
         console.error("Error fetching packages:", error);
       }
@@ -28,7 +29,7 @@ function BasicExample() {
   }, []);
 
   return (
-    <Navbar expanded={expanded} expand="lg" className="custom-navbar fixed-top">
+    <Navbar expanded={expanded} expand="lg" color='white' className="custom-navbar fixed-top">
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand">
           Angel Destination
@@ -38,34 +39,34 @@ function BasicExample() {
           onClick={() => setExpanded(expanded ? false : true)}
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto" style={{ color: 'white' }}>
             <Nav.Link as={Link} to="/" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>HOME</Nav.Link>
             <Nav.Link as={Link} to="/aboutus" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>ABOUT US</Nav.Link>
             <Nav.Link as={Link} to="/blogs" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>BLOGS</Nav.Link>
             <NavDropdown
-  title="Packages"
-  id="basic-nav-dropdown"
-  className="dropdown-hover"
-  style={{ color: 'white' }}
->
-  {packages.length === 0 ? (
-    <NavDropdown.Item style={{ color: 'white' }} disabled>
-      Loading...
-    </NavDropdown.Item>
-  ) : (
-    packages.map((data) => (
-      <NavDropdown.Item
-        key={data.id}
-        as={Link}
-        to={`/city?id=${data.id}`}
-        style={{ color: 'white' }}
-        onClick={() => setExpanded(false)}
-      >
-        {data.city}
-      </NavDropdown.Item>
-    ))
-  )}
-</NavDropdown>
+              title="Themes"
+              id="basic-nav-dropdown"
+              className="dropdown-hover"
+              style={{ color: 'white' }}
+            >
+              {packages.length === 0 ? (
+                <NavDropdown.Item style={{ color: 'white' }} disabled>
+                  Loading...
+                </NavDropdown.Item>
+              ) : (
+                packages.map((data) => (
+                  <NavDropdown.Item
+                    key={data._id}
+                    as={Link}
+                    to={`/theme/${data.title}/${data._id}`}
+                    // style={{ color: 'black' }}
+                    onClick={() => setExpanded(false)}
+                  >
+                    {data.title}
+                  </NavDropdown.Item>
+                ))
+              )}
+            </NavDropdown>
 
             <Nav.Link as={Link} to="/offers" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>OFFERS</Nav.Link>
             <Nav.Link as={Link} to="/contactus" className="nav-link" style={{ color: 'white' }} onClick={() => setExpanded(false)}>CONTACT US</Nav.Link>

@@ -8,9 +8,10 @@
 .tittle-a {
   color: #005aa7;
   text-align: center;
-  
+
 }
-.text-justify{
+
+.text-justify {
   text-align: justify;
 }
 
@@ -80,11 +81,13 @@
   font-size: 1rem;
   margin-bottom: 10px;
 }
-.p-card-destination{
+
+.p-card-destination {
   font-size: 20px;
-  
+
 }
-.strong-card-destination{
+
+.strong-card-destination {
   text-align: left;
 }
 
@@ -94,7 +97,7 @@
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  
+
   font-weight: bold;
 }
 

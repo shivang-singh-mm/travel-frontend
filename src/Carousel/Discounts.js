@@ -9,6 +9,7 @@ function Discounts() {
   async function fetchOffers() {
     const fetchOfferRes = await axios.get(`${baseurl}/api/offer/`);
     setOffer(fetchOfferRes.data);
+    console.log(fetchOfferRes);
   }
 
   useEffect(() => {
@@ -80,15 +81,15 @@ function Discounts() {
             style={{ position: 'relative', width: '100%', zIndex: 1 }}
           >
             <DiscountCarousel
-              url1={offer[0].url1}
-              url2={offer[0].url2}
-              url3={offer[0].url3}
-              description1={offer[0].description1}
-              description2={offer[0].description2}
-              description3={offer[0].description3}
-              title1={offer[0].title1}
-              title2={offer[0].title2}
-              title3={offer[0].title3}
+              url1={offer[0].extras[0].url}
+              url2={offer[0].extras[1].url}
+              url3={offer[0].extras[2].url}
+              description1={offer[0].extras[0].description}
+              description2={offer[0].extras[1].description}
+              description3={offer[0].extras[2].description}
+              title1={offer[0].extras[0].title}
+              title2={offer[0].extras[1].title}
+              title3={offer[0].extras[2].title}
             />
           </div>
         </div>

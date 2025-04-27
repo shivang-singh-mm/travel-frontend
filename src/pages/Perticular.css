@@ -1,108 +1,269 @@
 .perticular-background {
-    background-image: url('https://imagedelivery.net/y9EHf1toWJTBqJVsQzJU4g/www.indianholiday.com/2024/09/Rajasthan-Tourism-2.png/w=870,h=380');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 200px;
-    position: relative;
-    display: flex;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 60px;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  }
-  
-  .perticular-background::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  
-  .perticular-background h3 {
-    position: relative;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 0 15px;
-  }
-  
-  .section-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eee;
-  }
-  
-  .package-box {
-    background-color: #fff8f0;
-    border-left: 5px solid #f78b3f;
-  }
-  
-  .tip-box {
-    background-color: #f3f4f6;
-    border-left: 5px solid #ffb703;
-    padding: 1rem;
-    margin-top: 2rem;
-    border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  position: relative;
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.perticular-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.perticular-background h3 {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 15px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Section Card */
+/* Section Card */
+.section-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  /* Lighter border to make it look more professional */
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Package Box */
+.package-box {
+  /* Removed the background color */
+  border-left: 5px solid #3977ac;
+  /* Subtle blue left border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Slight shadow for depth */
+  margin-bottom: 20px;
+  /* Slightly smaller margin for better alignment */
+}
+
+/* Important Information Box */
+.section-card ul {
+  padding-left: 1.5rem;
+  /* Add padding for better alignment of list */
+}
+
+.important-info-box {
+  border-left: 5px solid #3977ac;
+}
+
+.section-card ul li {
+  margin-bottom: 0.8rem;
+  /* Slight spacing between list items */
+  font-size: 1rem;
+  /* Slightly smaller text for a cleaner look */
+}
+
+/* Text Styles */
+.fw-bold {
+  font-weight: 600;
+}
+
+.text-primary {
+  color: #3977ac;
+  /* Professional blue color */
+}
+
+.text-danger {
+  color: #e74c3c;
+  /* Professional red color for costs */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
 
-  .itinerary-container {
-    background: whitesmoke;
-    padding: 2rem;
-    border-radius: 10px;
+  100% {
+    opacity: 1;
   }
-  
-  .itinerary-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .itinerary-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-  }
- 
+}
+
+
+/* Tip Box */
+.tip-box {
+  background-color: #f3f4f6;
+  border-left: 5px solid #ffb703;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Itinerary Container */
+.itinerary-container {
+  background: whitesmoke;
+  padding: 2rem;
+  border-radius: 10px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.itinerary-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.itinerary-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 400px;
+  /* Desktop height */
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Important for maintaining clean scaling */
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
   .card-image-wrapper {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
+    height: 220px;
+    /* Mobile height */
   }
-  
-  .card-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+
+.itinerary-header {
+  background-color: #3977ac;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itinerary-header.open {
+  background-color: #3977ac;
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  color: black;
+}
+
+.itinerary-content {
+  background-color: #f9f9f9;
+  padding: 1rem;
+}
+
+/* Slick Carousel Arrows */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+  /* Bring arrows above everything */
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  color: #000;
+  /* Make arrows black (or white depending on your background) */
+}
+
+.slick-prev {
+  left: -45px;
+  /* Move arrow a bit outside left */
+}
+
+.slick-next {
+  right: -45px;
+  /* Move arrow a bit outside right */
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  text-align: center;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3977ac;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #3977ac;
+  animation: fadeInText 2s ease-in-out;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .itinerary-header {
-    background-color:#3977ac;
-    color: white;
-    padding: 1rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .itinerary-header.open {
-    background-color: #3977ac;
+}
+
+/* Fade In Animation for Elements */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .toggle-icon {
-    font-size: 1.2rem;
-    color: black;
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .itinerary-content {
-    background-color: #f9f9f9;
-    padding: 1rem;
+}
+
+/* Fade In Text Animation */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
   }
-  
-  
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation for Fade-in elements */
+.fade-in {
+  animation: fadeIn 1.5s ease-out;
+}

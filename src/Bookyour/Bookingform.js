@@ -54,7 +54,7 @@
 //             gap: "8px",
 //           }}
 //         >
-        
+
 //           <h1
 //             style={{
 //               fontSize: "1.25rem",
@@ -70,7 +70,7 @@
 
 //         <form onSubmit={handleSubmit} style={{ padding: "1.5rem", display: "grid", gap: "1.5rem" }}>
 //           <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
-           
+
 //             <div style={{ position: "relative" }}>
 //               <UserRound style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#9ca3af" }} size={20} />
 //               <input type="text" placeholder="Full Name" value={formData.name}
@@ -78,7 +78,7 @@
 //                 style={{ width: "100%", padding: "12px 12px 12px 40px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
 //             </div>
 
-        
+
 //             <div style={{ position: "relative" }}>
 //               <Phone style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#9ca3af" }} size={20} />
 //               <input type="tel" placeholder="Phone Number" value={formData.number}
@@ -86,7 +86,7 @@
 //                 style={{ width: "100%", padding: "12px 12px 12px 40px", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
 //             </div>
 
-            
+
 //             <div style={{ position: "relative" }}>
 //               <Mail style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#9ca3af" }} size={20} />
 //               <input type="email" placeholder="Email Id" value={formData.email}
@@ -95,7 +95,7 @@
 //             </div>
 //           </div>
 
-          
+
 //           <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
 //             <select value={formData.adults}
 //               onChange={(e) => setFormData({ ...formData, adults: e.target.value })}
@@ -121,7 +121,7 @@
 //             </div>
 //           </div>
 
- 
+
 //           <div style={{ display: "flex", justifyContent: "flex-end" }}>
 //             <button type="submit" style={{
 //               backgroundColor: "#ea580c", color: "#ffffff", padding: "12px 24px", borderRadius: "8px", fontWeight: "600",
@@ -177,88 +177,88 @@ const Bookingform = () => {
     }
   };
   <div className="toasti">
-     </div>
- return (
-  <>
-    <div className="booking-form-wrapper">
-      <div className="booking-form-container">
-        <div className="form-label-header">📅 BOOK YOUR TRIP NOW</div>
-        <form className="booking-form" onSubmit={handleSubmit}>
-          <div className="form-row">
-            <input
-              type="text"
-              placeholder="Full Name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              required
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              value={formData.number}
-              onChange={(e) =>
-                setFormData({ ...formData, number: e.target.value })
-              }
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email Id"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div className="form-row">
-            <select
-              value={formData.adults}
-              onChange={(e) =>
-                setFormData({ ...formData, adults: e.target.value })
-              }
-              required
-            >
-              <option value="">No. of Adult</option>
-              {[1, 2, 3, 4, 5].map((num) => (
-                <option key={num} value={num}>
-                  {num}
-                </option>
-              ))}
-            </select>
-            <select
-              value={formData.children}
-              onChange={(e) =>
-                setFormData({ ...formData, children: e.target.value })
-              }
-              required
-            >
-              <option value="">No. of Child</option>
-              {[0, 1, 2, 3, 4].map((num) => (
-                <option key={num} value={num}>
-                  {num}
-                </option>
-              ))}
-            </select>
-            <input
-              type="date"
-              value={formData.date}
-              onChange={(e) =>
-                setFormData({ ...formData, date: e.target.value })
-              }
-              required
-            />
-            <input type="text" placeholder="Destinations" />
-            <button type="submit">SEND ENQUIRY →</button>
-          </div>
-        </form>
+  </div>
+  return (
+    <>
+      <div className="booking-form-wrapper">
+        <div className="booking-form-container">
+          <div className="form-label-header">📅 BOOK YOUR TRIP NOW</div>
+          <form className="booking-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                value={formData.number}
+                onChange={(e) =>
+                  setFormData({ ...formData, number: e.target.value })
+                }
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email Id"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                required
+              />
+            </div>
+            <div className="form-row">
+              <select
+                value={formData.adults}
+                onChange={(e) =>
+                  setFormData({ ...formData, adults: e.target.value })
+                }
+                required
+              >
+                <option value="">No. of Adult</option>
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
+                ))}
+              </select>
+              <select
+                value={formData.children}
+                onChange={(e) =>
+                  setFormData({ ...formData, children: e.target.value })
+                }
+                required
+              >
+                <option value="">No. of Child</option>
+                {[0, 1, 2, 3, 4].map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
+                ))}
+              </select>
+              <input
+                type="date"
+                value={formData.date}
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                }
+                required
+              />
+              <input type="text" placeholder="Destinations" />
+              <button type="submit">SEND ENQUIRY →</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
 
-  </>
-);
+    </>
+  );
 };
 
 export default Bookingform;

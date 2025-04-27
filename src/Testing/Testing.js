@@ -45,7 +45,7 @@
 //           <div className="testimonial-container">
 //             <h1 className="tittle-a">Our Happy Travellers</h1>
 //             <p>Our biggest reward is the smiles of our travelers. From breathtaking landscapes to unforgettable memories, read how real people turned their dream vacations into reality with us</p>
-            
+
 //             <Carousel interval={3000} indicators={false} className="w-auto">
 //               {testimonialChunks.map((group, idx) => (
 //                 <Carousel.Item key={idx}>
@@ -116,7 +116,7 @@
 //     const fetchTestimonialsRes = await axios.get(`${baseurl}/api/review/`);
 //     const allTestimonials = fetchTestimonialsRes.data;
 
-    
+
 //     setTestimonials(allTestimonials.slice(0, 5));
 //   }
 
@@ -152,7 +152,7 @@
 //                           height={100}
 //                         />
 //                         <h5 className="mt-3 mb-1">{item?.name}</h5>
-                      
+
 //                         <p className="text-center mt-3">{item?.review}</p>
 //                         <div className="stars mt-2">{renderStars(item?.star_number)}</div>
 //                       </div>

@@ -1,10 +1,10 @@
-
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaCamera, FaCheckCircle, FaSpinner } from "react-icons/fa";
+import axios from "axios";
 import "./App.css";
 
-export default function ImageUploadForm() {
+export default function BlogForm() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [title, setTitle] = useState("");
@@ -12,10 +12,12 @@ export default function ImageUploadForm() {
   const [uploadStatus, setUploadStatus] = useState("idle"); // idle, uploading, success
   const [fileError, setFileError] = useState(false); // for file validation
 
+  const baseurl = process.env.REACT_APP_API_URL; // <-- Replace with your actual API
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
-    setFileError(false); // reset error when a file is selected
+    setFileError(false);
 
     if (file) {
       const reader = new FileReader();
@@ -26,7 +28,25 @@ export default function ImageUploadForm() {
     }
   };
 
-  const handlePost = () => {
+  const uploadImage = async (file) => {
+    if (!file) return "";
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "test-name"); // <-- your Cloudinary preset
+
+    try {
+      const response = await axios.post(
+        "https://api.cloudinary.com/v1_1/dmfxly4bz/image/upload",
+        formData
+      );
+      return response.data.secure_url;
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      return "";
+    }
+  };
+
+  const handleSubmit = async () => {
     if (!selectedFile) {
       setFileError(true);
       return;
@@ -34,19 +54,30 @@ export default function ImageUploadForm() {
 
     setUploadStatus("uploading");
 
-    setTimeout(() => {
-      console.log("Post Submitted:", { title, description, selectedFile });
+    try {
+      const imageUrl = await uploadImage(selectedFile);
+
+      const blogData = {
+        title,
+        description,
+        url: imageUrl,
+      };
+
+      await axios.post(`${baseurl}/api/blog`, blogData);
+
       setUploadStatus("success");
 
       setTimeout(() => {
         setUploadStatus("idle");
-        // Optional: clear the form after success
         setSelectedFile(null);
         setPreviewUrl(null);
         setTitle("");
         setDescription("");
       }, 3000);
-    }, 2000);
+    } catch (error) {
+      console.error("Error submitting blog:", error);
+      setUploadStatus("idle");
+    }
   };
 
   const renderStatus = () => {
@@ -80,7 +111,7 @@ export default function ImageUploadForm() {
                 src={previewUrl}
                 alt="Preview"
                 className="img-fluid rounded border border-secondary border-2 shadow"
-                style={{ maxHeight: "300px" }}
+                style={{ minHeight: "300px", minWidth: "500px" }}
               />
             ) : (
               <div
@@ -93,7 +124,7 @@ export default function ImageUploadForm() {
           </div>
 
           <input
-            type="file" required
+            type="file"
             className={`form-control ${fileError ? "is-invalid" : ""}`}
             onChange={handleFileChange}
           />
@@ -108,7 +139,7 @@ export default function ImageUploadForm() {
         <div className="col-md-6">
           <div className="mb-3">
             <input
-              type="text" required
+              type="text"
               placeholder="Title"
               className="form-control border border-secondary border-2 shadow-sm"
               value={title}
@@ -125,12 +156,11 @@ export default function ImageUploadForm() {
             ></textarea>
           </div>
 
-          {/* Upload Status */}
           <div className="mb-2">{renderStatus()}</div>
 
           <button
             className="btn btn-success w-100 shadow"
-            onClick={handlePost}
+            onClick={handleSubmit}
             disabled={uploadStatus === "uploading"}
           >
             {uploadStatus === "uploading" ? "Posting..." : "Post"}

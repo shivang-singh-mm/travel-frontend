@@ -1,41 +1,100 @@
- .booking-page1 {
+.booking-page1 {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url("https://img.freepik.com/free-vector/flat-design-travel-background_23-2149193475.jpg?t=st=1742098515~exp=1742102115~hmac=203f1b57034843b3de066e388b1fcc5bbc6a293ac83ecc7943ce9a4213e753be");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
 
-     text-align: center;
-     padding: 50px 20px;
-     background-image: url("https://img.freepik.com/free-vector/flat-design-travel-background_23-2149193475.jpg?t=st=1742098515~exp=1742102115~hmac=203f1b57034843b3de066e388b1fcc5bbc6a293ac83ecc7943ce9a4213e753be");
-     background-size: cover;
-     background-position: center;
-     background-attachment: scroll;
+.overlay-oo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
 
- }
+.booking-title1 {
+    position: relative;
+    z-index: 2;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #005aa7;
+    margin-bottom: 30px;
+}
 
- .booking-title1 {
-     margin-top: 25px;
-     font-size: 2.5rem;
-     font-weight: bold;
-     color: #005aa7;
-     margin-bottom: 20px;
- }
+.booking-form1 {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 90, 167, 0.25);
+}
 
- .booking-form1 {
+.form-group1 {
+    margin-bottom: 20px;
+    text-align: left;
+}
 
-     max-width: 500px;
-     margin: auto;
-     background: #fff;
-     padding: 20px;
-     border-radius: 10px;
-     box-shadow: 0 4px 10px rgba(0, 90, 167, 0.3);
- }
+.form-label1 {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
 
- .submit-btn1 {
+.booking-form1 input,
+.booking-form1 select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: 0.3s all ease;
+}
 
-     background: #005aa7;
-     color: white;
-     width: 100%;
-     margin-top: 15px;
- }
+.booking-form1 input:focus,
+.booking-form1 select:focus {
+    border-color: #005aa7;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 90, 167, 0.2);
+    outline: none;
+}
 
- .submit-btn1.booking-form1 {
+.submit-btn1 {
+    background: linear-gradient(135deg, #005aa7, #003e7d);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
 
-     background: #004080;
- }
+.submit-btn1:hover {
+    background: linear-gradient(135deg, #004080, #002f60);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 90, 167, 0.3);
+}
+
+@media (max-width: 600px) {
+    .booking-title1 {
+        font-size: 2rem;
+    }
+
+    .booking-form1 {
+        padding: 20px;
+    }
+}

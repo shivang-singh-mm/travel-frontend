@@ -1,96 +1,23 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import './TourPage.css';
-
-// const PopularDestination = () => {
-//     const [gallery, setGallery] = useState({
-//         title: '',
-//         description: ''
-//     });
-
-//     const [selectedImage, setSelectedImage] = useState(null);
-//     const baseurl = process.env.REACT_APP_API_URL;
-
-//     const handleInputChange = (e) => {
-//         setGallery({ ...gallery, [e.target.name]: e.target.value });
-//     };
-
-//     const handleImageSelection = (e) => {
-//         setSelectedImage(e.target.files[0]);
-//     };
-
-//     const uploadImage = async (file) => {
-//         if (!file) return '';
-//         const formData = new FormData();
-//         formData.append('file', file);
-//         formData.append('upload_preset', 'test-name');
-
-//         try {
-//             const response = await axios.post('https://api.cloudinary.com/v1_1/dmfxly4bz/image/upload', formData);
-//             return response.data.secure_url;
-//         } catch (error) {
-//             console.error('Error uploading image:', error);
-//             return '';
-//         }
-//     };
-
-//     const handleSubmit = async (e) => {
-//         e.preventDefault();
-
-//         try {
-//             const imageUrl = await uploadImage(selectedImage);
-//             if (!imageUrl) {
-//                 alert('Failed to upload image.');
-//                 return;
-//             }
-
-//             const finalData = { ...gallery, image_url: imageUrl };
-//             await axios.post(`${baseurl}/api/gallery`, finalData);
-//             alert('Gallery item added successfully!');
-
-//             setGallery({ title: '', description: '' });
-//             setSelectedImage(null);
-//         } catch (error) {
-//             console.error('Error submitting gallery item:', error);
-//         }
-//     };
-
-//     return (
-//         <div className="post-destination-container">
-//             <h2>Add a New Gallery Item</h2>
-//             <form onSubmit={handleSubmit}>
-//                 <input type="text" name="title" placeholder="Title *" value={gallery.title} onChange={handleInputChange} required />
-//                 <textarea name="description" placeholder="Description *" value={gallery.description} onChange={handleInputChange} required></textarea>
-
-//                 <label>Image:</label>
-//                 <input type="file" accept="image/*" onChange={handleImageSelection} required />
-
-//                 <button type="submit">Post Gallery Item</button>
-//             </form>
-//         </div>
-//     );
-// };
-
-// export default PopularDestination;
-
-
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaCamera, FaCheckCircle, FaSpinner } from "react-icons/fa";
+import axios from "axios";
 import "./App.css";
 
-export default function ImageUploadForm() {
+export default function PopularDestinationForm() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [uploadStatus, setUploadStatus] = useState("idle"); // idle, uploading, success
-  const [fileError, setFileError] = useState(false); // for file validation
+  const [uploadStatus, setUploadStatus] = useState("idle");
+  const [fileError, setFileError] = useState(false);
+
+  const baseurl = process.env.REACT_APP_API_URL; // ← Replace with your actual backend API
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
-    setFileError(false); // reset error when a file is selected
+    setFileError(false);
 
     if (file) {
       const reader = new FileReader();
@@ -101,7 +28,25 @@ export default function ImageUploadForm() {
     }
   };
 
-  const handlePost = () => {
+  const uploadImage = async (file) => {
+    if (!file) return "";
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "test-name"); // ← Use your Cloudinary upload preset
+
+    try {
+      const res = await axios.post(
+        "https://api.cloudinary.com/v1_1/dmfxly4bz/image/upload",
+        formData
+      );
+      return res.data.secure_url;
+    } catch (err) {
+      console.error("Image upload error:", err);
+      return "";
+    }
+  };
+
+  const handleSubmit = async () => {
     if (!selectedFile) {
       setFileError(true);
       return;
@@ -109,19 +54,30 @@ export default function ImageUploadForm() {
 
     setUploadStatus("uploading");
 
-    setTimeout(() => {
-      console.log("Post Submitted:", { title, description, selectedFile });
+    try {
+      const imageUrl = await uploadImage(selectedFile);
+
+      const destinationData = {
+        title,
+        description,
+        image_url: imageUrl,
+      };
+
+      await axios.post(`${baseurl}/api/gallery`, destinationData);
+
       setUploadStatus("success");
 
       setTimeout(() => {
         setUploadStatus("idle");
-        // Optional: clear the form after success
         setSelectedFile(null);
         setPreviewUrl(null);
         setTitle("");
         setDescription("");
       }, 3000);
-    }, 2000);
+    } catch (error) {
+      console.error("Destination submission error:", error);
+      setUploadStatus("idle");
+    }
   };
 
   const renderStatus = () => {
@@ -147,7 +103,7 @@ export default function ImageUploadForm() {
       <div className="row bg-light p-4 rounded border border-light border-3 custom-shadow">
         <h1 className="tittle-a">Add Popular Destinations</h1>
 
-        {/* Left: Preview & File Input */}
+        {/* Left: Image preview + input */}
         <div className="col-md-6 text-center mb-4 mb-md-0">
           <div className="mb-3">
             {previewUrl ? (
@@ -155,7 +111,7 @@ export default function ImageUploadForm() {
                 src={previewUrl}
                 alt="Preview"
                 className="img-fluid rounded border border-secondary border-2 shadow"
-                style={{ maxHeight: "300px" }}
+                style={{ minHeight: "300px", minWidth: "500px" }}
               />
             ) : (
               <div
@@ -168,7 +124,7 @@ export default function ImageUploadForm() {
           </div>
 
           <input
-            type="file" required
+            type="file"
             className={`form-control ${fileError ? "is-invalid" : ""}`}
             onChange={handleFileChange}
           />
@@ -179,11 +135,11 @@ export default function ImageUploadForm() {
           )}
         </div>
 
-        {/* Right: Title, Description, Status, Button */}
+        {/* Right: Form Fields */}
         <div className="col-md-6">
           <div className="mb-3">
             <input
-              type="text" required
+              type="text"
               placeholder="Title"
               className="form-control border border-secondary border-2 shadow-sm"
               value={title}
@@ -205,7 +161,7 @@ export default function ImageUploadForm() {
 
           <button
             className="btn btn-success w-100 shadow"
-            onClick={handlePost}
+            onClick={handleSubmit}
             disabled={uploadStatus === "uploading"}
           >
             {uploadStatus === "uploading" ? "Posting..." : "Post"}

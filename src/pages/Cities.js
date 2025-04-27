@@ -1,6 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom"; 
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./Cities.css";
+import axios from "axios";
 
 const tourPackages = [
   {
@@ -28,10 +29,34 @@ const tourPackages = [
 ];
 
 function Cities() {
+
+  const [theme, setThemes] = useState([]);
+
+  const { _id: _id } = useParams();
+
+  const baseurl = process.env.REACT_APP_API_URL;
+
+  useEffect(() => {
+    async function fetchThemes() {
+      try {
+        const response = await axios.get(`${baseurl}/api/theme/${_id}`);
+        setThemes(response.data);
+        console.log(response.data)
+      } catch (error) {
+        console.error("Error fetching packages:", error);
+      }
+    }
+    fetchThemes();
+  }, []);
+
   return (
     <div className="cities-wrapper">
-      <div className="tour-background-ra p-4 text-white text-center">
-        <h2>Rajasthan Tour Packages</h2>
+      <div
+        style={{
+          backgroundImage: `url(${theme.image_url})`,
+        }}
+        className="tour-background-ra p-4 text-white text-center">
+        <h2>{theme.title}</h2>
       </div>
 
       <div className="container my-4">
@@ -39,51 +64,41 @@ function Cities() {
           Plan Your Rajasthan Tour With Our Experienced Trip Advisors
         </h3>
         <p className="text-justify">
-          Architectural wonders, exquisite handicrafts, colourful culture, and
-          tempting cuisine are a few of the many highlights of this magnificent
-          state. Set amidst a vast desert, the magical land of Rajasthan is
-          synonymous with romance and chivalry. As one of the best travel
-          agencies in India, we at JoyPlus Holidays take immense pride in
-          helping you explore royalty like never before.
-        </p>
-        <p className="text-justify">
-          With our Rajasthan tour packages, travel back in time and experience
-          the era of royal reign. A complete Rajasthan package includes
-          luxurious palaces, vintage cars, camel safaris in golden sand dunes,
-          shopping in Jaipur bazaars, and tiger safaris in the wild forests.
-        </p>
-        <p className="text-justify">
-          Enjoy folk music, dances, puppet shows, magnificent forts, temples,
-          and the opulent Rajput culture.
+          {theme.description?.split('\n').map((line, index) => (
+            <span key={index}>
+              {line}
+              <br />
+            </span>
+          ))}
         </p>
 
         <div className="row">
-          {tourPackages.map((pkg) => (
-            <div className="col-12 mb-4" key={pkg.id}>
+          {theme?.package_ids?.map((pkg) => (
+            <div className="col-12 mb-4" key={pkg._id}>
               {/* Make the whole card clickable */}
-              <Link to="/cities" className="text-decoration-none text-dark">
+              <Link to={`/package/${pkg.title1}/${pkg._id}`} className="text-decoration-none text-dark">
                 <div className="card shadow">
                   <div className="row g-0 flex-column flex-md-row">
                     {/* Image */}
                     <div className="col-12 col-md-4 position-relative">
                       <img
-                        src={pkg.image}
+                        src={pkg.image1}
                         className="card-img-top"
-                        alt={pkg.title}
+                        alt={pkg.title1}
                         style={{ height: "100%", objectFit: "cover" }}
                       />
-                      <div className="discount-label">{pkg.discount} OFF</div>
+                      {/* <div className="discount-label">{pkg.discount} OFF</div> */}
                       <button className="on-request-btn">₹ On Request</button>
                     </div>
 
                     {/* Content */}
                     <div className="col-12 col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title text-primary">{pkg.title}</h5>
+                        <h5 className="card-title text-primary">{pkg.title1}</h5>
                         <p className="text-muted">
                           <strong>📍 Places Covered</strong>
                           <br />
-                          {pkg.places}
+                          {pkg.placesCovered}
                         </p>
                         <div className="d-flex justify-content-between my-2 flex-wrap">
                           <div className="feature-box">🏨 Accommodation</div>
@@ -93,7 +108,7 @@ function Cities() {
                         </div>
                         <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
                           <div className="duration">
-                            📞 {pkg.nights} Nights/{pkg.days} Days
+                            📞 {pkg?.form4Items[0]?.input1}
                           </div>
                           <button className="btn btn-danger px-4">
                             VIEW DETAILS

@@ -7,7 +7,7 @@ import "./TourPage.css";
 import axios from "axios";
 import CitySlider from "./CitySlider";
 
- 
+
 const CityTour = () => {
   const [city, setCity] = useState('');
 
@@ -19,8 +19,7 @@ const CityTour = () => {
   const id = searchParams.get("id");
   async function fetchCity() {
     const fetchCityRes = await axios.get(`${baseurl}/api/tour/${id}`);
-    console.log(fetchCityRes.data)
-    setCity(fetchCityRes.data);
+    setCity(fetchCityRes);
   }
 
   useEffect(() => {
