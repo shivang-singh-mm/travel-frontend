@@ -224,7 +224,7 @@ const Bookingform = () => {
                 <option value="">No. of Adult</option>
                 {[1, 2, 3, 4, 5].map((num) => (
                   <option key={num} value={num}>
-                    {num}
+                    {num}{num === 5 ? '+' : ''}
                   </option>
                 ))}
               </select>
@@ -238,7 +238,7 @@ const Bookingform = () => {
                 <option value="">No. of Child</option>
                 {[0, 1, 2, 3, 4].map((num) => (
                   <option key={num} value={num}>
-                    {num}
+                    {num}{num === 4 ? '+' : ''}
                   </option>
                 ))}
               </select>
