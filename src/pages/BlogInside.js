@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import "./BlogInside.css";
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import Carousel from "../Carousel/Carousel";
 
 const destinations = [
   {
@@ -33,25 +34,28 @@ function BlogInside() {
 
 
   return (
-    <div className="blog-container">
-      <div className="column">
-        {/* {blog.map((item) => ( */}
-        <div key={blog.id} className="tittle-z blog-section">
-          <h2>{blog.title}</h2>
-          <img src={blog.url} alt={blog.title} className="blog-image" />
-          {/* <p>{blog.description}</p> */}
-          <p>
-            {blog.description?.split('\n').map((line, index) => (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </p>
+    <>
+      <div className="blog-container">
+        <div className="column">
+          {/* {blog.map((item) => ( */}
+          <div key={blog.id} className="tittle-z blog-section">
+            <h2>{blog.title}</h2>
+            <img src={blog.url} alt={blog.title} className="blog-image" />
+            {/* <p>{blog.description}</p> */}
+            <p>
+              {blog.description?.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
+          </div>
+          {/* ))} */}
         </div>
-        {/* ))} */}
       </div>
-    </div>
+      <Carousel />
+    </>
   );
 }
 

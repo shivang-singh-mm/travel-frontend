@@ -46,7 +46,7 @@ function Blog() {
         </div>
         {/* ))} */}
       </div>
-      <Carousel />
+      {/* <Carousel /> */}
     </>
   );
 }
