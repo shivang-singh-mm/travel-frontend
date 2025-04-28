@@ -61,7 +61,7 @@ function Cities() {
 
       <div className="container my-4">
         <h3 className="mb-3">
-          Plan Your Rajasthan Tour With Our Experienced Trip Advisors
+          Plan Your Next Tour With Our Experienced Trip Advisors
         </h3>
         <p className="text-justify">
           {theme.description?.split('\n').map((line, index) => (
