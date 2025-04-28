@@ -49,7 +49,7 @@ const Gallery = () => {
   return (
     <div className="carousel-container">
       <h1 className="tittle-a">Popular Destination</h1>
-      <p>Our popular destinations offer something for every kind of traveler. Whether you're planning a romantic getaway, an adventure trip, or a family vacation, these destinations promise unforgettable experiences, scenic views, and cherished memories.</p>
+      <p style={{ textAlign: 'center' }}>Our popular destinations offer something for every kind of traveler. Whether you're planning a romantic getaway, an adventure trip, or a family vacation, these destinations promise unforgettable experiences, scenic views, and cherished memories.</p>
       <Slider {...settings}>
         {cards?.map((card) => (
           <div key={card.id} className="carousel-card">

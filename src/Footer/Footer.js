@@ -67,10 +67,10 @@ function Footer() {
             <a href="https://wa.me/919773980709" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp size={25} color="#25D366" />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61575245982687" target="_blank" rel="noopener noreferrer">
               <FaFacebookF size={25} color='#1877F2' />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/p/DIJwGdKTiem/?igsh=aTdzZmV1MnNmOG54" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={25} color='#E4405F' />
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">

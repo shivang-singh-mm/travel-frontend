@@ -27,7 +27,8 @@
   overflow: hidden;
   text-align: center;
   padding: 15px;
-  height: 470px;
+  height: fit-content;
+  max-height: 500px;
   /* Increased height for better layout */
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);

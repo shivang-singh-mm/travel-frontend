@@ -36,7 +36,7 @@ const HolidayOffers = () => {
   const baseurl = process.env.REACT_APP_API_URL
 
   async function fetchBlogs() {
-    const fetchBlogPosts = await axios.get(`${baseurl}/api/blog/`);
+    const fetchBlogPosts = await axios.get(`${baseurl}/api/offer/`);
     setBogs(fetchBlogPosts.data);
   }
 
@@ -48,29 +48,27 @@ const HolidayOffers = () => {
   return (
     <div className="offers-container">
       <h2 className="offers-heading">
-        Read our latest <span className="highlight">Blogs</span>
+        Latest <span className="highlight">Offers</span>
       </h2>
       <p className="offers-subtext">
-        Discover inspiring travel stories, expert tips, and hidden gems from around the world.
-        Stay updated with the latest travel trends, guides, and destination spotlights.
-        Your adventure begins here—one blog at a time.
+        {blogs?.[0]?.description}
       </p>
 
       <Slider {...settings}>
-        {blogs.length !== 0 && blogs.map((item, index) => (
+        {blogs?.[0]?.extras !== 0 && blogs?.[0]?.extras.map((item, index) => (
           <div key={index} className="offer-card">
             <div className="image-wrapper">
               <img src={item.url} alt={item.title} />
             </div>
             <div className="card-content-z">
               <h4>{item.title}</h4>
-              <small>{item?.description?.split(' ').slice(0, 20).join(' ')}</small>
+              <small>{item?.description}</small>
               <div className="price-row">
                 {/* <span className="original-price">₹{item.originalPrice}</span> */}
                 {/* <span className="offer-price">₹{item.offerPrice}</span> */}
                 {/* <span className="discount">({item.discount} off)</span> */}
               </div>
-              <Link to={`/blogsinside?id=${item._id}`} className="view-button-kj">View More</Link>
+              {/* <Link to={`/blogsinside?id=${item._id}`} className="view-button-kj">View More</Link> */}
             </div>
           </div>
         ))}

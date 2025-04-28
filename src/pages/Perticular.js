@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Perticular.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -135,6 +135,9 @@ function Perticular() {
                 {tourPackage?.description2}
               </ul>
             </div>
+
+            <Link to='/booking'>
+              <button className="banner-btn" style={{ backgroundColor: '#3977ac' }} >Plan Your Next Adventure</button></Link>
           </div>
 
 

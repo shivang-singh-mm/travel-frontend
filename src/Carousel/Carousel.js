@@ -49,8 +49,8 @@ const CardSlider = () => {
 
   return (
     <div className="slider-container-a">
-      <h1 className="title-a" style={{ color: "#005aa7" }}>Our Popular Packages</h1>
-      <p className="text-justify">Our popular travel packages are thoughtfully curated to bring you the most exciting, relaxing, and culturally rich experiences across the globe.Each package is designed to include top-rated accommodations, seamless transfers, guided tours, and must-visit attractions </p>
+      <h1 className="title-a" style={{ color: "#005aa7", textAlign: 'center', alignItems: 'center' }}>Our Popular Packages</h1>
+      <p className="text-justify-center">Our popular travel packages are thoughtfully curated to bring you the most exciting, relaxing, and culturally rich experiences across the globe.Each package is designed to include top-rated accommodations, seamless transfers, guided tours, and must-visit attractions </p>
       <Slider {...settings}>
         {cardsData.map((card) => (
           <div key={card._id} className="card-a">
