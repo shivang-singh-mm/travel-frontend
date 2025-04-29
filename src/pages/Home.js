@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Button } from "react-bootstrap";
 import BookingForm from "../Bookyour/Bookingform";
 import Carousel from "../Carousel/Carousel";
-// import Discounts from "../Carousel/Discounts.js";
+import Discounts from "../Carousel/Discounts.js";
 import Gallery from "../Gallery";
 import TestimonialSlider from "../Testing/Testing";
 import HolidayOffers from "../HolidayOffers/HolidayOffers.js";
@@ -40,7 +40,7 @@ const Home = () => {
         <BookingForm />
       </div>
 
-      {/* <Discounts /> */}
+      <Discounts />
       <Carousel />
       <Banner />
       <div className="Gallery-section">
