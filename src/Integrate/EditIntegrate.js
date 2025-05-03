@@ -127,7 +127,7 @@ export default function EditTourPackages() {
                 description2,
                 itineraryItems: itineraryItems,
                 form4Items,
-                inclusions: inclusionList,
+                inclusionList,
                 specialAttentionList: specialAttentionList,
                 placesCovered,
                 travelTip,
