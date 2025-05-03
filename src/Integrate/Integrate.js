@@ -202,7 +202,7 @@ export default function TourPackages() {
         <div className="p-4 bg-white rounded shadow mt-2">
           {form4Items.map((item, index) => (
             <div key={index} className="mb-4">
-              <input type="text" className="form-control mb-2" placeholder="Destination" value={item.name} onChange={(e) => handleForm4Change(index, "name", e.target.value)} />
+              {/* <input type="text" className="form-control mb-2" placeholder="Destination" value={item.name} onChange={(e) => handleForm4Change(index, "name", e.target.value)} /> */}
               <input type="text" className="form-control mb-2" placeholder="Duration" value={item.input1} onChange={(e) => handleForm4Change(index, "input1", e.target.value)} />
               <input type="text" className="form-control" placeholder="Price" value={item.input2} onChange={(e) => handleForm4Change(index, "input2", e.target.value)} />
             </div>

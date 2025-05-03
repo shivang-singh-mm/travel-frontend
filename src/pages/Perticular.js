@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Bookingform from "../Bookyour/Bookingform";
 
 function Perticular() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -165,6 +166,8 @@ function Perticular() {
           </div>
         ))}
       </div>
+     <Bookingform/>
+
     </div>
   );
 }
