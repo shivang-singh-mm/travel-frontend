@@ -47,7 +47,7 @@ function Cities() {
       }
     }
     fetchThemes();
-  }, []);
+  }, [_id]);
 
   return (
     <div className="cities-wrapper">

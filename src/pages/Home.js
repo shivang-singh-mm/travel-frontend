@@ -12,6 +12,7 @@ import WhyWe from "../WhyWe/WhyWe.js";
 import '../pages/Home.css'
 
 import Banner from "../Banner";
+import LatestBlogs from "../HolidayOffers/LatestBlogs.js";
 
 const Home = () => {
   const formRef = useRef(null);
@@ -53,7 +54,7 @@ const Home = () => {
       </div>
       <WhyWe />
       <div className="holidays-sections">
-        <HolidayOffers />
+        <LatestBlogs />
       </div>
       <Advanture />
     </div>
