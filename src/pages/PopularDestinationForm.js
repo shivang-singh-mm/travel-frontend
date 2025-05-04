@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaCamera, FaCheckCircle, FaSpinner } from "react-icons/fa";
 import axios from "axios";
-import "./App.css";
 
 export default function PopularDestinationForm() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -12,7 +11,7 @@ export default function PopularDestinationForm() {
   const [uploadStatus, setUploadStatus] = useState("idle");
   const [fileError, setFileError] = useState(false);
 
-  const baseurl = process.env.REACT_APP_API_URL; // ← Replace with your actual backend API
+  const baseurl = process.env.REACT_APP_API_URL; // Replace with your actual backend API
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -32,7 +31,7 @@ export default function PopularDestinationForm() {
     if (!file) return "";
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "test-name"); // ← Use your Cloudinary upload preset
+    formData.append("upload_preset", "test-name"); // Replace with your Cloudinary upload preset
 
     try {
       const res = await axios.post(
@@ -111,7 +110,11 @@ export default function PopularDestinationForm() {
                 src={previewUrl}
                 alt="Preview"
                 className="img-fluid rounded border border-secondary border-2 shadow"
-                style={{ minHeight: "300px", minWidth: "500px" }}
+                style={{
+                  width: "100%",
+                  height: "300px",
+                  objectFit: "cover",
+                }}
               />
             ) : (
               <div
