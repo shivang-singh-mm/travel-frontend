@@ -82,7 +82,7 @@ const AboutUs = () => {
 
       {/* Meet Our Team Section */}
       <Container className="team-section">
-        <h2 className="section-title text-center">Meet Our Travel Experts</h2>
+        <h2 className="section-title text-center">Meet Our Travel Expert</h2>
         <p>Our team of passionate travel experts is the heart of everything we do. With years of experience, insider knowledge, and a deep love for exploring the world, they’re here to craft the perfect trip just for you.</p>
         <Row className="justify-content-center">
           {teamMembers.map((member, index) => (
@@ -147,13 +147,7 @@ const teamMembers = [
     role: "Shivam Pundheer is a seasoned tourism professional with over five years of experience in organizing and managing travel services across India. His expertise lies in curating personalized itineraries, ensuring seamless experiences, and prioritizing safety and security, especially in adventure tourism.He skillfully integrates technology to enhance travel experiences. His deep understanding of client needs, along with his commitment to providing top-notch service, makes him a trusted name in the industry.Travel Consultant",
     image:
       "https://www.kilroy.co.uk/media/m35nwbxs/img_0110.jpeg?width=1900&height=950&rmode=crop&quality=70&rxy=0.5,0.5",
-  },
-  {
-    name: "Mr. Mohit",
-    role: "With 16 years of experience in the travel industry, Mr. Mohit has successfully served 3,000+ customers, providing top-notch service and expert guidance while catering to their every need. A Master’s graduate from Agra University, he has worked with two reputed organizations, where he not only proved his expertise but also contributed to their 200% growth. His deep industry knowledge, customer-first approach, and commitment to excellence make him a trusted name in travel and tourism.",
-    image:
-      "https://www.emeraldcruises.eu/-/media/project/scenic/emerald-cruises/travel-agent-hub/ours-sales-team/d_ecer-two_guests_with_cruise_director.jpg?rev=4ac6a19446404789bded0ad61fa64f98",
-  },
+  }
 
 
 ];
